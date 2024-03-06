@@ -36,3 +36,149 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+	font-family: "Crimson Text", "Times New Roman", serif;
+	background-color: #ccc;
+	font-size: 120%;
+	line-height: 1.5;
+	width: 100%;
+}
+
+main{
+	background-color: rgb(189, 189, 148);
+	width: 70%;
+    margin: 0 auto;
+}
+
+main .topo {
+	width: 100%;
+	background-color: #251350c5;
+	color: black;
+	border-bottom: 10px solid rgb(51, 11, 51);
+	font-size: 60px;
+	height: 150px;
+	padding-top: 10px;
+}
+
+main .topo img{
+	width: 140px;
+    float: left;
+	margin-right: 15px;
+	margin-left: 15px;
+}
+
+main .topo h1{
+	margin-top: 28px;
+	text-transform: uppercase;
+	
+}
+
+main .menu{
+	width: 100%;
+	height: 35px;
+	background-color: #383349c5;
+}
+
+.agentes,.veiculos,.vingadores,.objetos{
+	padding: 3px 2px;	
+}
+
+main .menu ul li{
+	display: inline-block;
+	padding: 0;
+	margin: 0;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+
+main .menu ul li h2 a { 
+	text-decoration: none;
+	color: black;
+	font-family: "Open Sans Condensed", "Arial", sans-serif;
+}
+
+main .menu ul li h2 a:hover{
+	color: white;
+	font-size: 20px;
+}
+
+main .counteiner{
+	width: 100%;
+	min-height: 500px;
+	padding: 10px 0;
+}
+
+main .counteiner .spy{
+	width: 40%;
+	margin: 0 auto;
+	
+}
+
+h1, h2, h3{
+	font-family: "Open Sans Condensed", "Arial", sans-serif;
+}
+
+h3{
+	margin: 10px 175px;
+}
+
+p {
+    text-align: justify;
+    margin: 20px 175px;
+}
+
+main .counteiner blockquote{
+	background-color: #1e0f3fc5;
+	margin: 0 50px 10px;
+	border-bottom: 10px solid rgb(34, 21, 34);
+	border-top: 10px solid rgb(34, 21, 34);
+	border-right: 10px solid rgb(34, 21, 34);
+	border-left: 10px solid rgb(34, 21, 34);
+}
+
+ .rodape{
+    background-color: rgb(41, 39, 39);
+    color: #f2fffc;
+	height: 50px;
+	clear: both;
+	width: 70%;
+	margin: 0 auto;
+}
+
+.rodape h4{
+	padding: 10px 0 0 5px;
+	float: left;
+}
+
+.rodape ul li{
+	display: block;
+	margin: 0 5px 0 0;
+	float: right;
+}
+
+.rodape .icones img{
+	width: 30px;
+	height: 30px;
+	margin-top: 10px;
+	margin-right: 15px;
+}
+
+/* inicio dos veiculos/objetos*/
+.counteiner .card{
+    width: 50%;
+    float: left;
+    margin: 0%;
+    padding: 0%;
+}
+
+.counteiner .card img{
+    width: 50%;
+	padding: 10px 100px 0;  
+	height: 150px;  
+}
+
+.counteiner .card .titulo{
+    margin: 5px 110px; 
+}
+/* fim dosveiculos/objetos */
