@@ -1,17 +1,17 @@
 interface CardProps {
     image: string;
-    alt: string;
+    imageAlt: string;
     title: string;
     name: string;
     codeName: string;
     status: string;
 }
 
-export default function Card(props: CardProps){
+export default function CardAgents(props: CardProps){
     return (
         <div>
             <div className = "spy">
-                <img src={props.image} alt={props.alt}/>
+                <img src={props.image} alt={props.imageAlt}/>
             </div>
             <blockquote>
                 <h3>{props.title}</h3>
