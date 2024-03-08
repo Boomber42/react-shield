@@ -81,15 +81,15 @@ const infoDb: Subject[] = [{
 
 function App() {
   let [itens, setItens] = useState<Subject[]>([]);
-  let [removeLoading, setRemoveLoading] = useState(false)
+  let [loading, setLoading] = useState(false)
  
-  function request(type?: string){
-    setItens([])
-    if(!type){
-      type = 'Agente'
-    }
+  function request(type: string = 'Agente'){
+    setLoading(true); //Inicia a tela de carregamento no front enquanto filtra os dados.
+    setItens([]) //Limpando o valor da variavel itens.
     setTimeout(() => {
-      setItens(infoDb.filter((element: Subject) => element.type === type));
+      var filteredItems: Subject[] = infoDb.filter((element: Subject) => element.type === type);
+      setItens(filteredItems); //Preenchendo a lista itens com os itens filtrados.
+      setLoading(false); //Finaliza a tela de carregamento após trazer os dados.
     }, 5000)
   }
 
@@ -145,7 +145,7 @@ function App() {
               card
             )
           })}
-          {!removeLoading && <Loading/>}
+          {loading ? <Loading/> : ''}
         </div>
       </main>
       <Footer/>
