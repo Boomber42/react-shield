@@ -212,7 +212,7 @@ span.loading{
 	height: 60px;
 	background-color: transparent;
 	display: block;
-	border: 12px solid crimson;
+	border: 12px solid #251350c5;
 	border-right: 12px solid transparent;
 	border-radius: 50%;
 
