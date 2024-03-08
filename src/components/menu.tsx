@@ -1,4 +1,13 @@
-const options = [{
+interface MenuProps{
+    request: Function
+}
+
+interface Options{
+    optionName: string;
+    optionRequest: string
+}
+
+const options: Options[] = [{
     optionName: 'Agentes',
     optionRequest: 'Agente'
 },
@@ -16,14 +25,14 @@ const options = [{
 },
 ]
 
-export default function Menu(props: any){
+export default function Menu(props: MenuProps){
     return(
         <div className="menu">
             <ul>
-                {options.map((iten) => {
+                {options.map((element: Options) => {
                     return (
                         <li>
-                            <h2 className = "iten-menu" onClick={() => props.request(iten.optionRequest)}> {iten.optionName} </h2>
+                            <h2 className = "element-menu" onClick={() => props.request(element.optionRequest)}> {element.optionName} </h2>
                         </li>
                     )
                 })}            

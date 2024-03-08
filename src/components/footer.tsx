@@ -1,4 +1,10 @@
-const socialMedias = [{
+interface SocialInfo {
+    link: string,
+    logo: string,
+    altLogo: string
+}
+
+const socialMedias: SocialInfo[] = [{
     link: 'https://www.instagram.com/cleiton.42/',
     logo:  'assets/images/intagram.png',
     altLogo: 'icone do Instagram'
@@ -20,11 +26,11 @@ export default function Footer() {
         <footer className="rodape">
             <h4>&copy; S.H.I.E.L.D.</h4>
             <ul className="icones">
-                {socialMedias.map((iten) => {
+                {socialMedias.map((element: SocialInfo) => {
                     return(
                         <li>
-                            <a href= {iten.link} target='blank'>
-                                <img src= {iten.logo} alt= {iten.altLogo}/>
+                            <a href= {element.link} target='blank'>
+                                <img src= {element.logo} alt= {element.altLogo}/>
                             </a>
                         </li>
                     )

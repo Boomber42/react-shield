@@ -5,9 +5,19 @@ import CardItens from './components/cardItens';
 import Menu from './components/menu';
 import Header from './components/header';
 import Footer from './components/footer';
+import Loading from './components/loading';
 
+interface Subject{
+  type: string,
+  title: string,
+  alt: string,
+  codeName?: string,
+  image: string,
+  name?: string,
+  status?: string
+}
 
-const infoDb: any[] = [{
+const infoDb: Subject[] = [{
   type: 'Agente',
   title: 'Agente Coulson',
   alt: 'imagem do Coulson',
@@ -70,13 +80,17 @@ const infoDb: any[] = [{
 ] 
 
 function App() {
-  let [itens, setItens] = useState<any[]>([]);
+  let [itens, setItens] = useState<Subject[]>([]);
+  let [removeLoading, setRemoveLoading] = useState(false)
  
   function request(type?: string){
+    setItens([])
     if(!type){
       type = 'Agente'
     }
-    setItens(infoDb.filter((element: any) => element.type === type));
+    setTimeout(() => {
+      setItens(infoDb.filter((element: Subject) => element.type === type));
+    }, 5000)
   }
 
   useEffect(() => {
@@ -88,49 +102,50 @@ function App() {
       <main>
         <Header/>
         <Menu
-          request = {request} 
+          request = {request}
         />
         <div className='counteiner'>
-          {itens.map((iten: any)=>{
+          {itens.map((item: Subject)=>{
             var card;
-            if(iten.type === 'Agente'){
+            if(item.type === 'Agente'){
               card = <CardAgents 
-                title={iten.title}
-                imageAlt={iten.alt}
-                codeName={iten.codeName}
-                image={iten.image}
-                name={iten.name}
-                status={iten.status}
+                title={item.title}
+                imageAlt={item.alt}
+                codeName={item.codeName || ''} 
+                image={item.image}
+                name={item.name || ''}
+                status={item.status || ''}
               />
             }
-            if(iten.type === 'Vingador'){
+            if(item.type === 'Vingador'){
               card = <CardAgents 
-                title={iten.title}
-                imageAlt={iten.alt}
-                codeName={iten.codeName}
-                image={iten.image}
-                name={iten.name}
-                status={iten.status}
+                title={item.title}
+                imageAlt={item.alt}
+                codeName={item.codeName || ''}
+                image={item.image}
+                name={item.name || ''}
+                status={item.status || ''}
               />
             }
-            if(iten.type === 'Objeto'){
+            if(item.type === 'Objeto'){
               card = <CardItens
-                title={iten.title}
-                imageAlt={iten.alt}
-                image={iten.image} 
+                title={item.title}
+                imageAlt={item.alt}
+                image={item.image} 
               />
             }
-            if(iten.type === 'Veiculo'){
+            if(item.type === 'Veiculo'){
               card = <CardItens
-                title={iten.title}
-                imageAlt={iten.alt}
-                image={iten.image} 
+                title={item.title}
+                imageAlt={item.alt}
+                image={item.image} 
               />
             }
             return(
               card
             )
           })}
+          {!removeLoading && <Loading/>}
         </div>
       </main>
       <Footer/>
