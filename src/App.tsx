@@ -16,7 +16,7 @@ function App() {
     setLoading(true); //Inicia a tela de carregamento no front enquanto filtra os dados.
     setItens([]) //Limpando o valor da variavel itens.
     const api = new Api();
-    var filteredItens: Subject[] = await api.getSubjects(type);
+    var filteredItens: Subject[] = await api.getSubjectsByType(type);
     setItens(filteredItens); //Preenchendo a lista itens com os itens filtrados.
     setLoading(false); //Finaliza a tela de carregamento após trazer os dados.
   }
