@@ -94,5 +94,27 @@ export default class Api{
             return filteredItems
         }
     }
+
+    async postSubject(subject: Subject): Promise<Subject> {
+        try{
+            const options: any = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(subject),
+            };
+
+            let response = await fetch('http://localhost:4000/subjects', options);
+            var result: Subject = await response.json();
+            mockSubjects.push(result);
+            return result;
+        } catch(error){
+            var newSubject = subject;
+            newSubject.id = String(Math.floor(Math.random() * 91) + 10);
+            mockSubjects.push(newSubject);
+            return newSubject;
+        }
+    }
 }
 

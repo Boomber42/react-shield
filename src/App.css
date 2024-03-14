@@ -219,6 +219,22 @@ span.loading{
 	animation: loading 1s ease-in-out infinite;
 }
 
+.buttonStyle{
+	display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+
+.form{
+	display: flex;
+    flex-direction: column;
+    min-width: 500px;
+}
+
+.form input{
+	margin-bottom: 10px;
+}
+
 @keyframes loading{
 	0%{
 		transform: rotate(0deg);
