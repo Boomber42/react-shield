@@ -76,8 +76,10 @@ export default function CustomModal(props: CustomModalProps) {
             <label htmlFor="imagem"> Imagem </label>
             <input type='text' placeholder='Imagem' id='imagem' onChange={(event) => setImage(event.target.value)}/>
           </div>
-          <Button name='Salvar' onClick={submitForm} />
-          <Button name='Fechar' onClick={props.closeModal}/>
+          <div className='buttonStyle'>
+            <Button name='Salvar' onClick={submitForm} />
+            <Button name='Fechar' onClick={props.closeModal}/>
+          </div>
         </form>
       </Modal>
     </div>
