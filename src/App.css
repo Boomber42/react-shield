@@ -156,6 +156,11 @@ main .counteiner blockquote{
 	border-left: 10px solid rgb(34, 21, 34);
 }
 
+main .image{
+	height: 85%;
+	width: 85%;
+}
+
  .rodape{
     background-color: rgb(41, 39, 39);
     color: #f2fffc;
