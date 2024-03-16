@@ -28,7 +28,7 @@ const options: Options[] = [{
 export default function Menu(props: MenuProps){
     return(
         <div className="menu">
-            <ul>
+            <ul className="ul">
                 {options.map((element: Options) => {
                     return (
                         <li>

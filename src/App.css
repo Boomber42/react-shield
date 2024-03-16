@@ -48,26 +48,30 @@ table {
 
 body {
 	font-family: "Crimson Text", "Times New Roman", serif;
-	background-color: #ccc;
+	background-color: #575757;
 	font-size: 120%;
 	line-height: 1.5;
 	width: 100%;
 }
 
 main{
-	background-color: rgb(189, 189, 148);
+	background-color: #ede3e3;
 	width: 70%;
     margin: 0 auto;
 }
 
 main .topo {
 	width: 100%;
-	background-color: #251350c5;
+	background-color: #9686a3;
 	color: black;
-	border-bottom: 10px solid rgb(51, 11, 51);
+	border-bottom: 10px solid rgb(0, 0, 0);
 	font-size: 60px;
 	height: 150px;
 	padding-top: 10px;
+}
+
+main .ul{
+	background-color: #bca6c7;
 }
 
 main .topo img{
@@ -94,7 +98,7 @@ main .menu{
 }
 
 .element-menu:hover{
-  color: #ccc;
+  color: #ffffff;
   cursor: pointer;
 }
 
@@ -127,7 +131,6 @@ main .counteiner{
 main .counteiner .spy{
 	width: 40%;
 	margin: 0 auto;
-	
 }
 
 h1, h2, h3{
@@ -144,7 +147,8 @@ p {
 }
 
 main .counteiner blockquote{
-	background-color: #1e0f3fc5;
+	background-color: #9686a3;
+	color: white;
 	margin: 0 50px 10px;
 	border-bottom: 10px solid rgb(34, 21, 34);
 	border-top: 10px solid rgb(34, 21, 34);
@@ -253,8 +257,9 @@ span.loading{
 
 .form input{
 	margin-bottom: 10px;
+	border-radius: 50px;
+	background-color: rgb(250, 240, 249);
 }
-
 
 @keyframes loading{
 	0%{

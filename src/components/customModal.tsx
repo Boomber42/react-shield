@@ -11,6 +11,8 @@ const customStyles = {
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
+    background: '#ede3e3',
+    borderRadius: '25px'
   },
 };
 
@@ -30,7 +32,7 @@ export default function CustomModal(props: CustomModalProps) {
   let subtitle: any;
 
   function afterOpenModal() {
-    subtitle.style.color = '#f00';
+    subtitle.style.color = 'rgb(72, 28, 72)';
   }
 
   async function submitForm() {
@@ -58,7 +60,7 @@ export default function CustomModal(props: CustomModalProps) {
         contentLabel="Example Modal"
       >
         <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Adicionar</h2>
-        <div>?I am a modal?</div>
+        <div>Preencha o formulário com as informações</div>
         <form>
           <div className='form'>
             <label htmlFor="titulo"> Titulo </label>
