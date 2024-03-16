@@ -63,17 +63,25 @@ export default function CustomModal(props: CustomModalProps) {
         <div>Preencha o formulário com as informações</div>
         <form>
           <div className='form'>
-            <label htmlFor="titulo"> Titulo </label>
-            <input type='text' placeholder='Titulo' id='titulo' onChange={(event) => setTitle(event.target.value)}/>
+            {['Agente', 'Vingador'].includes(props.typeModal) ? (
+              <>
+                <label htmlFor="titulo"> Titulo </label>
+                <input type='text' placeholder='Titulo' id='titulo' onChange={(event) => setTitle(event.target.value)}/>
+              </>
+            ): null }
 
             <label htmlFor="nome"> Nome </label>
             <input type='text' placeholder='Nome' id='nome' onChange={(event) => setName(event.target.value)}/>
 
-            <label htmlFor="code-nome"> Code nome </label>
-            <input type='text' placeholder='Code nome' id='code-nome' onChange={(event) => setCodeName(event.target.value)}/>
+            {['Agente', 'Vingador'].includes(props.typeModal) ? (<>
+              <label htmlFor="code-nome"> Code nome </label>
+              <input type='text' placeholder='Code nome' id='code-nome' onChange={(event) => setCodeName(event.target.value)}/>
+            </>): null }
 
-            <label htmlFor="status"> Status </label>
-            <input type='text' placeholder='Status' id='status' onChange={(event) => setStatus(event.target.value)}/>
+            {['Agente', 'Vingador'].includes(props.typeModal) ? (<>            
+              <label htmlFor="status"> Status </label>
+              <input type='text' placeholder='Status' id='status' onChange={(event) => setStatus(event.target.value)}/>
+            </>): null }
 
             <label htmlFor="imagem"> Imagem </label>
             <input type='text' placeholder='Imagem' id='imagem' onChange={(event) => setImage(event.target.value)}/>
