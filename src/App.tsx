@@ -31,9 +31,10 @@ function App() {
   }, [])
 
   function closeModal(reload?: boolean){
-    if(reload){
+    if(reload === true){
       request(currentType);
     }
+
     setIsModalOpen(false);
   }
 
@@ -55,7 +56,7 @@ function App() {
           <CustomModal isModalOpen={isModalOpen} closeModal={closeModal} typeModal={currentType} />
           {itens.map((item: Subject)=>{
             var card;
-            if(item.type === 'Agente'){
+            if(item.type === 'Agente' || item.type === 'Vingador'){
               card = <CardAgents 
                 title={item.title}
                 imageAlt={item.alt}
@@ -65,30 +66,15 @@ function App() {
                 status={item.status || ''}
               />
             }
-            if(item.type === 'Vingador'){
-              card = <CardAgents 
-                title={item.title}
-                imageAlt={item.alt}
-                codeName={item.codeName || ''}
-                image={item.image}
-                name={item.name || ''}
-                status={item.status || ''}
-              />
-            }
-            if(item.type === 'Objeto'){
+
+            if(item.type === 'Objeto' || item.type === 'Veiculo'){
               card = <CardItens
                 title={item.title}
                 imageAlt={item.alt}
                 image={item.image} 
               />
             }
-            if(item.type === 'Veiculo'){
-              card = <CardItens
-                title={item.title}
-                imageAlt={item.alt}
-                image={item.image} 
-              />
-            }
+
             return(
               card
             )
