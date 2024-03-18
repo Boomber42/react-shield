@@ -36,6 +36,7 @@ function App() {
     }
 
     setIsModalOpen(false);
+    setLoading(true);
   }
 
   function openModal(){

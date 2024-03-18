@@ -67,16 +67,6 @@
       "title": "Quinjet",
       "alt": "imagem do Quinjet",
       "image": "/assets/images/quinjet.jpg"
-    },
-    {
-      "id": "aa7a",
-      "title": "Dog",
-      "name": "Catioro",
-      "codeName": "Dogunio",
-      "status": "Vivo eu espero",
-      "image": "https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2024/02/cachorro-messi-anatomia-de-uma-queda-e1708119960460.jpg?w=1080",
-      "alt": "Imagem do Catioro",
-      "type": "Agente"
     }
   ]
 }

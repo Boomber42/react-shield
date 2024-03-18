@@ -19,7 +19,7 @@ const customStyles = {
 interface CustomModalProps{
     isModalOpen: boolean,
     closeModal: (reload?: boolean) => void,
-    typeModal: string
+    typeModal: string,
 }
 
 export default function CustomModal(props: CustomModalProps) {
@@ -63,15 +63,15 @@ export default function CustomModal(props: CustomModalProps) {
         <div>Preencha o formulário com as informações</div>
         <form>
           <div className='form'>
+            <label htmlFor="titulo"> Titulo </label>
+            <input type='text' placeholder='Titulo' id='titulo' onChange={(event) => setTitle(event.target.value)}/>
+
             {['Agente', 'Vingador'].includes(props.typeModal) ? (
               <>
-                <label htmlFor="titulo"> Titulo </label>
-                <input type='text' placeholder='Titulo' id='titulo' onChange={(event) => setTitle(event.target.value)}/>
+                <label htmlFor="nome"> Nome </label>
+                <input type='text' placeholder='Nome' id='nome' onChange={(event) => setName(event.target.value)}/>
               </>
             ): null }
-
-            <label htmlFor="nome"> Nome </label>
-            <input type='text' placeholder='Nome' id='nome' onChange={(event) => setName(event.target.value)}/>
 
             {['Agente', 'Vingador'].includes(props.typeModal) ? (<>
               <label htmlFor="code-nome"> Code nome </label>
