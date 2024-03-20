@@ -77,6 +77,34 @@ const mockSubjects: Subject[] = [
         "title": "Quinjet",
         "alt": "imagem do Quinjet",
         "image": "/assets/images/quinjet.jpg"
+    },
+    {
+        "id": "9",
+        "type": "Veiculo",
+        "title": "Onibus",
+        "alt": "imagem do Onibus",
+        "image": "/assets/images/onibus.png"
+    },
+    {
+        "id": "10",
+        "type": "Veiculo",
+        "title": "Porta Aviões",
+        "alt": "imagem do Porta Aviões",
+        "image": "/assets/images/porta avioes.jpg"
+    },
+    {
+        "id": "11",
+        "type": "Objeto",
+        "title": "Monolito_Blanco",
+        "alt": "imagem do Monolito_Blanco",
+        "image": "/assets/images/Monolito_Blanco.png"
+    },
+    {
+        "id": "12",
+        "type": "Objeto",
+        "title": "Crsital Terrigeno",
+        "alt": "imagem do Crsital Terrigeno",
+        "image": "/assets/images/cristal.jpg"
     }
 ]
 

@@ -79,7 +79,11 @@ function App() {
               card
             )
           })}
-          {loading ? <Loading/> : ''}
+          {loading ? (
+            <div className='loader'> 
+              <Loading/>
+            </div> 
+          ) : ''}
         </div>
       </main>
       <Footer/>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Modal from 'react-modal';
 import Button from './button';
 import Api, { Subject } from '../helpers/api';
+import Loading from '../components/loading';
 
 const customStyles = {
   content: {
@@ -28,6 +29,7 @@ export default function CustomModal(props: CustomModalProps) {
   let [codeName, setCodeName] = useState<string>('');
   let [status, setStatus] = useState<string>('');
   let [image, setImage] = useState<string>('');
+  let [loading, setLoading] = useState(false);
 
   let subtitle: any;
 
@@ -36,6 +38,7 @@ export default function CustomModal(props: CustomModalProps) {
   }
 
   async function submitForm() {
+    setLoading(true);
     var form: Subject = {
       title,
       name,
@@ -47,6 +50,7 @@ export default function CustomModal(props: CustomModalProps) {
     }
     const api = new Api();
     await api.postSubject(form);
+    setLoading(false);
     props.closeModal(true);
   }
 
@@ -74,8 +78,8 @@ export default function CustomModal(props: CustomModalProps) {
             ): null }
 
             {['Agente', 'Vingador'].includes(props.typeModal) ? (<>
-              <label htmlFor="code-nome"> Code nome </label>
-              <input type='text' placeholder='Code nome' id='code-nome' onChange={(event) => setCodeName(event.target.value)}/>
+              <label htmlFor="codinome"> Codinome </label>
+              <input type='text' placeholder='Codinome' id='codinome' onChange={(event) => setCodeName(event.target.value)}/>
             </>): null }
 
             {['Agente', 'Vingador'].includes(props.typeModal) ? (<>            
@@ -87,9 +91,14 @@ export default function CustomModal(props: CustomModalProps) {
             <input type='text' placeholder='Imagem' id='imagem' onChange={(event) => setImage(event.target.value)}/>
           </div>
           <div className='buttonStyle'>
-            <Button name='Salvar' onClick={submitForm} />
-            <Button name='Fechar' onClick={props.closeModal}/>
+            <Button name='Salvar' onClick={submitForm} loading={loading} />
+            <Button name='Fechar' onClick={props.closeModal} loading={loading} />
           </div>
+          {loading ? (
+            <div className='loader-default'>
+              <Loading/>
+            </div>
+          ) : ''}
         </form>
       </Modal>
 

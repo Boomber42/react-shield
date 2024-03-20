@@ -67,6 +67,134 @@
       "title": "Quinjet",
       "alt": "imagem do Quinjet",
       "image": "/assets/images/quinjet.jpg"
+    },
+    {
+      "id": "9",
+      "type": "Veiculo",
+      "title": "Onibus",
+      "alt": "imagem do Onibus",
+      "image": "/assets/images/onibus.png"
+    },
+    {
+      "id": "10",
+      "type": "Veiculo",
+      "title": "Porta Aviões",
+      "alt": "imagem do Porta Aviões",
+      "image": "/assets/images/porta avioes.jpg"
+    },
+    {
+      "id": "11",
+      "type": "Objeto",
+      "title": "Monolito_Blanco",
+      "alt": "imagem do Monolito_Blanco",
+      "image": "/assets/images/Monolito_Blanco.png"
+    },
+    {
+      "id": "12",
+      "type": "Objeto",
+      "title": "Crsital Terrigeno",
+      "alt": "imagem do Crsital Terrigeno",
+      "image": "/assets/images/cristal.jpg"
+    },
+    {
+      "id": "8ecf",
+      "title": "Viuva Negra",
+      "name": "Natalia Alianovna Romanova.",
+      "codeName": "Natasha Romanoff.",
+      "status": "Morta.",
+      "image": "https://classic.exame.com/wp-content/uploads/2021/07/vic3bava-negra.jpg?quality=70&strip=info&w=1024",
+      "alt": "Imagem do Natalia Alianovna Romanova.",
+      "type": "Vingador"
+    },
+    {
+      "id": "5d1d",
+      "title": "Thor",
+      "name": "Thor Odinson.",
+      "codeName": "Thor.",
+      "status": "Vivo.",
+      "image": "https://classic.exame.com/wp-content/uploads/2018/10/thor-ragnarok-filme-cultura-vip.jpg?quality=70&strip=info&w=720",
+      "alt": "Imagem do Thor Odinson.",
+      "type": "Vingador"
+    },
+    {
+      "id": "48db",
+      "title": "Gavião Arqueiro",
+      "name": "Clinton Francis Barton.",
+      "codeName": "Clint.",
+      "status": "Vivo.",
+      "image": "https://i.uai.com.br/yDoPOZIiUIUtInbDoAcKndMlEb0=/750x0/imgsapp2.uai.com.br/app/noticia_133890394703/2023/01/02/313539/jeremy-renner-como-o-gaviao-arqueiro-no-mcu_1_47022.jpg",
+      "alt": "Imagem do Clinton Francis Barton.",
+      "type": "Vingador"
+    },
+    {
+      "id": "29bb",
+      "title": "Maquina de Combate",
+      "name": "James Rupert Rhodes.",
+      "codeName": "Maquina de Combate.",
+      "status": "Vivo.",
+      "image": "https://uploads-observatoriodocinema.seox.com.br/2022/09/marvel-brings-don-cheadle-back-a-1200x675.jpg",
+      "alt": "Imagem do James Rupert Rhodes.",
+      "type": "Vingador"
+    },
+    {
+      "id": "912b",
+      "title": "Capitão América",
+      "name": "Samuel Thomas Wilson.",
+      "codeName": "Sam.",
+      "status": "Vivo.",
+      "image": "https://assets.papelpop.com/wp-content/uploads/2021/04/falcao-e-o-soldado-invernal-capitao-america-sam-wilson.png",
+      "alt": "Imagem do Samuel Thomas Wilson.",
+      "type": "Vingador"
+    },
+    {
+      "id": "7b28",
+      "title": "Feiticeira escarlate",
+      "name": "Wanda Maximoff.",
+      "codeName": "Feiticeira escarlate.",
+      "status": "Morta.",
+      "image": "https://deliriumnerd.com/wp-content/uploads/2022/05/Feiticeira-Escarlate-ela-e-mais-do-que-eles-dizem-1170x780.jpg",
+      "alt": "Imagem do Wanda Maximoff.",
+      "type": "Vingador"
+    },
+    {
+      "id": "feff",
+      "title": "Homem Aranha",
+      "name": "Peter Benjamin Parker.",
+      "codeName": "Homem Aranha.",
+      "status": "Vivo.",
+      "image": "https://cinemacomrapadura.com.br/imagens/2021/11/20211109-aranha-3-radar.jpg",
+      "alt": "Imagem do Peter Benjamin Parker.",
+      "type": "Vingador"
+    },
+    {
+      "id": "eb3c",
+      "title": "Visão Branco",
+      "name": "Visão.",
+      "codeName": "Visão Branco.",
+      "status": "Vivo.",
+      "image": "https://epipoca.com.br/wp-content/uploads/2021/06/E20jqcAWEAAzoyv.jpg",
+      "alt": "Imagem do Visão.",
+      "type": "Vingador"
+    },
+    {
+      "id": "eb0e",
+      "title": "Agente Daisy",
+      "name": "Daisy Louise Johnson.",
+      "codeName": "Quake.",
+      "status": "Viva.",
+      "image": "https://i.redd.it/dvlrtq10xj711.jpg",
+      "alt": "Imagem do Daisy Louise Johnson.",
+      "type": "Agente"
+    },
+    {
+      "id": "8156",
+      "title": "Agente Fitz",
+      "name": "Leopold James Fitz.",
+      "codeName": "Fitz.",
+      "status": "Vivo.",
+      "image": "https://static1.srcdn.com/wordpress/wp-content/uploads/2019/02/Agents-of-Shield-Leo-Fitz.jpg",
+      "alt": "Imagem do Leopold James Fitz.",
+      "type": "Agente"
     }
   ]
 }
