@@ -92,6 +92,7 @@ export default function CustomModal(props: CustomModalProps) {
           </div>
         </form>
       </Modal>
+
     </div>
   );
 }
