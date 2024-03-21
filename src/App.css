@@ -197,13 +197,13 @@ main .image{
 }
 
 .counteiner .card img{
-    /* width: 50%;
+    width: 50%;
 	padding: 10px 100px 0;  
-	height: 150px;   */
-	max-width: 200px;
+	height: 150px;  
+	/* max-width: 200px;
 	max-height: 200px;
 	width: auto;
-	height: auto;
+	height: auto; */
 }
 
 .counteiner .card .titulo{

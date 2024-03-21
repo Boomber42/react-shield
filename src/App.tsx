@@ -64,6 +64,7 @@ function App() {
                 image={item.image}
                 name={item.name || ''}
                 status={item.status || ''}
+                onClick={openModal}
               />
             }
 
@@ -72,6 +73,7 @@ function App() {
                 title={item.title}
                 imageAlt={item.alt}
                 image={item.image} 
+                onClick={openModal}
               />
             }
 

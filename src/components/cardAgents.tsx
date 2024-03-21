@@ -1,17 +1,18 @@
 interface CardProps {
-    image: string;
-    imageAlt: string;
-    title: string;
-    name: string;
-    codeName: string;
-    status: string;
+    image: string,
+    imageAlt: string,
+    title: string,
+    name: string,
+    codeName: string,
+    status: string,
+    onClick: () => void
 }
 
 export default function CardAgents(props: CardProps){
     return (
         <div>
             <div className = "spy">
-                <img className="image" src={props.image} alt={props.imageAlt}/>
+                <img className="image" src={props.image} onClick={props.onClick} alt={props.imageAlt}/>
             </div>
             <blockquote>
                 <h3>{props.title}</h3>
