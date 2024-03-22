@@ -1,15 +1,18 @@
+import { Link } from "react-router-dom";
+
 interface CardProps {
     image: string,
     imageAlt: string,
     title: string,
-    onClick: () => void
 }
 
-export default function CardItens(props: CardProps){
+export default function CardItens(props: CardProps) {
     return (
         <div>
-            <div className = "card">
-                <img className="image" src={props.image} onClick={props.onClick} alt={props.imageAlt}/>
+            <div className="card">
+                <Link to={'objects'}>
+                    <img className="image" src={props.image} alt={props.imageAlt} />
+                </Link>
                 <h2 className="titulo">{props.title}</h2>
             </div>
         </div>

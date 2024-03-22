@@ -1,5 +1,5 @@
-export interface Subject{
-    id?: string, 
+export interface Subject {
+    id: string,
     type: string,
     title: string,
     alt: string,
@@ -108,23 +108,23 @@ const mockSubjects: Subject[] = [
     }
 ]
 
-export default class Api{
+export default class Api {
     async getSubjectsByType(type: string): Promise<Subject[]> {
         var filteredItems: Subject[];
 
-        try{
+        try {
             let response = await fetch('http://localhost:4000/subjects');
             var subjects: Subject[] = await response.json();
             filteredItems = subjects.filter((element: Subject) => element.type === type);
             return filteredItems
-        }catch(error){
+        } catch (error) {
             filteredItems = mockSubjects.filter((element: Subject) => element.type === type);
             return filteredItems
         }
     }
 
     async postSubject(subject: Subject): Promise<Subject> {
-        try{
+        try {
             const options: any = {
                 method: 'POST',
                 headers: {
@@ -137,11 +137,28 @@ export default class Api{
             var result: Subject = await response.json();
             mockSubjects.push(result);
             return result;
-        } catch(error){
+        } catch (error) {
             var newSubject = subject;
             newSubject.id = String(Math.floor(Math.random() * 91) + 10);
             mockSubjects.push(newSubject);
             return newSubject;
+        }
+    }
+
+    async getSubjectById(id: string): Promise<Subject> {
+        try {
+            const options: any = {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            };
+            let response = await fetch(`http://localhost:4000/subjects/${id}`, options);
+            var result: Subject = await response.json();
+            return result;
+        }
+        catch(error){
+            return mockSubjects.find((item: Subject) => item.id === id) ?? {} as Subject;
         }
     }
 }

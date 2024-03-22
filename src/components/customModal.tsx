@@ -39,7 +39,7 @@ export default function CustomModal(props: CustomModalProps) {
 
   async function submitForm() {
     setLoading(true);
-    var form: Subject = {
+    var form: any = {
       title,
       name,
       codeName,
@@ -49,7 +49,7 @@ export default function CustomModal(props: CustomModalProps) {
       type: props.typeModal
     }
     const api = new Api();
-    await api.postSubject(form);
+    await api.postSubject(form as Subject);
     setLoading(false);
     props.closeModal(true);
   }

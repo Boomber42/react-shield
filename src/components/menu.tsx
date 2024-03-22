@@ -1,6 +1,4 @@
-interface MenuProps{
-    request: Function
-}
+import { Link } from "react-router-dom";
 
 interface Options{
     optionName: string;
@@ -25,14 +23,18 @@ const options: Options[] = [{
 },
 ]
 
-export default function Menu(props: MenuProps){
+export default function Menu(){
     return(
         <div className="menu">
             <ul className="ul">
                 {options.map((element: Options) => {
                     return (
                         <li>
-                            <h2 className = "element-menu" onClick={() => props.request(element.optionRequest)}> {element.optionName} </h2>
+                            <Link to={`/?type=${element.optionRequest}`} style={{
+                                textDecoration: 'none'
+                            }}>
+                                <h2 className = "element-menu"> {element.optionName} </h2>
+                            </Link>
                         </li>
                     )
                 })}            
