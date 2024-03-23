@@ -1,3 +1,6 @@
+import { ApplicationStorage } from '../helpers/applicationStorage';
+import { v4 as uuidv4 } from 'uuid';
+
 export interface Subject {
     id: string,
     type: string,
@@ -132,6 +135,12 @@ export default class Api {
                 },
                 body: JSON.stringify(subject),
             };
+
+            if (subject.image) {
+                const applicationStorage = new ApplicationStorage();
+                const url: string = await applicationStorage.upload(subject.image, `${uuidv4()}.jpg`);
+                subject.image = url;
+            }
 
             let response = await fetch('http://localhost:4000/subjects', options);
             var result: Subject = await response.json();

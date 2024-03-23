@@ -8,7 +8,7 @@ import CustomModal from '../components/customModal';
 import { useSearchParams } from 'react-router-dom';
 
 function HomeRouter() {
-	const [searchParams, setSearchParams] = useSearchParams();
+	const [searchParams] = useSearchParams();
 	let [itens, setItens] = useState<Subject[]>([]);
 	let [loading, setLoading] = useState(false);
 	let [isModalOpen, setIsModalOpen] = useState<boolean>(false);

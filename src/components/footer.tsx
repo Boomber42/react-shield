@@ -26,9 +26,9 @@ export default function Footer() {
         <footer className="rodape">
             <h4>&copy; S.H.I.E.L.D.</h4>
             <ul className="icones">
-                {socialMedias.map((element: SocialInfo) => {
+                {socialMedias.map((element: SocialInfo, index: number) => {
                     return(
-                        <li>
+                        <li key={index}>
                             <a href= {element.link} target='blank'>
                                 <img src= {element.logo} alt= {element.altLogo}/>
                             </a>

@@ -27,9 +27,9 @@ export default function Menu(){
     return(
         <div className="menu">
             <ul className="ul">
-                {options.map((element: Options) => {
+                {options.map((element: Options, index: number) => {
                     return (
-                        <li>
+                        <li key={index}>
                             <Link to={`/?type=${element.optionRequest}`} style={{
                                 textDecoration: 'none'
                             }}>
