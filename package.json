@@ -1,6 +1,6 @@
 {
   "name": "react-shield",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
@@ -10,7 +10,6 @@
     "mock-server": "json-server --watch mock-server.json --port 4000"
   },
   "dependencies": {
-    "dotenv": "^16.4.5",
     "firebase": "^10.9.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -44,7 +43,6 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "@types/dotenv": "^8.2.0",
     "@types/firebase": "^3.2.1",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.86",
