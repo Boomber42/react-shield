@@ -48,7 +48,7 @@ function HomeRouter() {
 					<Button name='Adicionar novo' onClick={openModal} />
 				</div>
 				<CustomModal isModalOpen={isModalOpen} closeModal={closeModal} typeModal={currentType} />
-				{itens.map((item: Subject, index: number) => {
+				{itens?.map((item: Subject, index: number) => {
 					var card;
 					if (item.type === 'Agente' || item.type === 'Vingador') {
 						card = <CardAgents

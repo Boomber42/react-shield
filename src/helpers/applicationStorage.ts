@@ -5,8 +5,16 @@ const BASE_URL: string = 'https://firebasestorage.googleapis.com/v0/b/react-shie
 
 export class ApplicationStorage {
     async upload(base64Image: string, fileName: string) {
-        const storageRef = ref(firebase.storage, fileName);
-        await uploadString(storageRef, base64Image, 'data_url');
-        return `${BASE_URL}/${fileName}?alt=media&token=de0c6456-9579-41d3-b86b-5d4a5b718b58`;
+        try {
+            if (!base64Image) {
+                return;
+            }
+
+            const storageRef = ref(firebase.storage, fileName);
+            await uploadString(storageRef, base64Image, 'data_url');
+            return `${BASE_URL}/${fileName}?alt=media&token=de0c6456-9579-41d3-b86b-5d4a5b718b58`;
+        } catch (err) {
+            return;
+        }
     }
 }
