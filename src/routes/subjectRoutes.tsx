@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom'
 
 export default function SubjectsRouter() {
 	const params: any = useParams();
+
 	let [subject, setSubject] = useState<Subject>();
 	let [loading, setLoading] = useState(false);
 
@@ -18,7 +19,7 @@ export default function SubjectsRouter() {
 
 	useEffect(() => {
 		request();
-	})
+	}, [])
 
 	return (
 		<div>

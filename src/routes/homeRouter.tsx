@@ -48,7 +48,7 @@ function HomeRouter() {
 					<Button name='Adicionar novo' onClick={openModal} />
 				</div>
 				<CustomModal isModalOpen={isModalOpen} closeModal={closeModal} typeModal={currentType} />
-				{itens.map((item: Subject) => {
+				{itens.map((item: Subject, index: number) => {
 					var card;
 					if (item.type === 'Agente' || item.type === 'Vingador') {
 						card = <CardAgents
@@ -59,6 +59,7 @@ function HomeRouter() {
 							image={item.image}
 							name={item.name || ''}
 							status={item.status || ''}
+							key={index}
 						/>
 					}
 
@@ -67,6 +68,7 @@ function HomeRouter() {
 							title={item.title}
 							imageAlt={item.alt}
 							image={item.image}
+							key={index}
 						/>
 					}
 

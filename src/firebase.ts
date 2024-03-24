@@ -14,7 +14,11 @@ const firebaseConfig: any = {
 const app = initializeApp(firebaseConfig);
 const storage = getStorage(app);
 
-const firebase: any = {
+interface Firebase {
+    storage: any
+};
+
+const firebase: Firebase = {
     storage
 };
 

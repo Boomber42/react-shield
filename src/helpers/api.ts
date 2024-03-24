@@ -109,8 +109,7 @@ const mockSubjects: Subject[] = [
         "alt": "imagem do Crsital Terrigeno",
         "image": "/assets/images/cristal.jpg"
     }
-]
-
+];
 export default class Api {
     async getSubjectsByType(type: string): Promise<Subject[]> {
         var filteredItems: Subject[];
