@@ -30,6 +30,7 @@ export default function SubjectsRouter() {
 				<div className='infoSpy'>
 					<img className="image" src={subject?.image} alt={subject?.image} />
 				</div>
+
 				<div className='infoSubject'>
 					<p className='info'> Titulo do {subject?.type}: {subject?.title} </p>
 					<p className='info'> Codinome do {subject?.type}: {subject?.codeName} </p>
@@ -37,7 +38,7 @@ export default function SubjectsRouter() {
 					<p className='info'> Status operacional do {subject?.type}: {subject?.status} </p>
 				</div>
 
-				<div className='infoSubjectText' style={{ marginTop: '50px' }}>
+				<div className='infoSubjectText' style={{ margin: '50px 0px 50px 0px' }}>
 					<div className='buttonDescripition' >
 						<Button name='Descrição' onClick={() => { }} loading={loading} />
 					</div>
@@ -49,6 +50,7 @@ export default function SubjectsRouter() {
 						<Loading />
 					</div>
 				) : ''}
+
 			</div>
 		</div>
 	)

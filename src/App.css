@@ -134,33 +134,35 @@ main .counteiner .spy{
 	margin: 0 auto;
 }
 
-main .counteiner .infoSpy{
+.infoSpy {
 	width: 390px;
 	margin: 0;
 	margin-left: 50px;
 	z-index: 1;
     position: relative;
 	filter: drop-shadow(15px 5px 5px rgb(36, 24, 44));
+	position: absolute;
 }
 
-.infoSubject{
+.infoSubject {
 	height: 200px;
-	margin-left: 10px;
-	margin-right: 10px;
-	transform: translate(0px, -265px);
+	/* margin-left: 10px;
+	margin-right: 10px; */
+	/* transform: translate(0px, -265px); */
 	background-color: #9686a3;
 	color: white;
 	border-bottom: 10px solid rgb(34, 21, 34);
 	border-top: 10px solid rgb(34, 21, 34);
 	border-right: 10px solid rgb(34, 21, 34);
 	border-left: 10px solid rgb(34, 21, 34);
+	margin-top: 70px;
 }
 
-.infoSubjectText{
+.infoSubjectText {
 	min-height: 410px;
 	margin-left: 10px;
 	margin-right: 10px;
-	transform: translate(0px, -265px);
+	/* transform: translate(0px, -265px); */
 	background-color: #7d5d89;
 	color: white;
 	border-bottom: 10px solid rgb(34, 21, 34);
@@ -169,15 +171,15 @@ main .counteiner .infoSpy{
 	border-left: 10px solid rgb(34, 21, 34);
 }
 
-h1, h2, h3{
+h1, h2, h3 {
 	font-family: "Open Sans Condensed", "Arial", sans-serif;
 }
 
-h3{
+h3 {
 	margin: 10px 175px;
 }
 
-.info{
+.info {
 	margin-left: 425px;
 	margin-bottom: -5px;
 }
