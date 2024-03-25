@@ -8,6 +8,8 @@ import CustomModal from '../components/customModal';
 import { useSearchParams } from 'react-router-dom';
 
 function HomeRouter() {
+	const isProduction: boolean = process.env.REACT_APP_IS_PRODUCTION ? JSON.parse(process.env.REACT_APP_IS_PRODUCTION) : false;
+
 	const [searchParams] = useSearchParams();
 	let [itens, setItens] = useState<Subject[]>([]);
 	let [loading, setLoading] = useState(false);
@@ -44,9 +46,11 @@ function HomeRouter() {
 	return (
 		<div>
 			<div className='counteiner'>
-				<div className='buttonStyle'>
-					<Button name='Adicionar novo' onClick={openModal} />
-				</div>
+				{ !isProduction ? (
+					<div className='buttonStyle'>
+						<Button name='Adicionar novo' onClick={openModal} />
+					</div>
+				) : null}
 				<CustomModal isModalOpen={isModalOpen} closeModal={closeModal} typeModal={currentType} />
 				{itens?.map((item: Subject, index: number) => {
 					var card;
