@@ -16,7 +16,7 @@ jobs:
           node-version: '18.12.1'
 
       - name: Install dependencies
-        run: ls -al /home/runner/work/react-shield/
+        run: ls -al /home/runner/work/react-shield/react-shield
 
       - name: Install dependencies
         run: npm install --prefix /home/runner/work/react-shield/
