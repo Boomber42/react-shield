@@ -16,10 +16,10 @@ jobs:
           node-version: '18.12.1'
 
       - name: Install dependencies
-        run: npm install
+        run: npm install --prefix /home/runner/work/react-shield/
 
       - uses: actions/checkout@v4
-      - run: npm ci && npm run build
+      - run: npm ci && npm run build --prefix /home/runner/work/react-shield/
 
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
