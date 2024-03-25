@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { ApplicationDatabase, CreateSubject } from '../helpers/applicationDatabase';
 
 export interface Subject {
+    createAt?: Date,
     id: string,
     type: string,
     title: string,
@@ -11,7 +12,8 @@ export interface Subject {
     codeName?: string,
     image: string,
     name?: string,
-    status?: string
+    status?: string,
+    descripition: string
 }
 
 export default class Api {

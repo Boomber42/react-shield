@@ -1,6 +1,5 @@
 import firebase from '../firebase';
 import { ref, DatabaseReference, get, DataSnapshot, query, orderByChild, equalTo, Query, set } from 'firebase/database';
-
 import { Subject } from './api';
 
 export interface CreateSubject extends Omit<Subject, 'id'> { }
@@ -49,6 +48,8 @@ export class ApplicationDatabase {
         try {
             const databaseReference: DatabaseReference = ref(firebase.database, `subjects/${subjectId}`);
 
+            subject.createAt = new Date();
+            
             set(databaseReference, subject);
 
             return {
