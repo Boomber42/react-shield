@@ -1,7 +1,7 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+:root {
+	--default-width: 95%;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -54,9 +54,9 @@ body {
 	width: 100%;
 }
 
-main{
+main {
 	background-color: #ede3e3;
-	width: 70%;
+	width: var(--default-width);
     margin: 0 auto;
 }
 
@@ -220,12 +220,12 @@ main .image{
 	width: 400px;
 }
 
- .rodape{
+.rodape{
     background-color: rgb(41, 39, 39);
     color: #f2fffc;
 	height: 50px;
 	clear: both;
-	width: 70%;
+	width: var(--default-width);
 	margin: 0 auto;
 }
 
@@ -323,4 +323,30 @@ span.loading{
 	100%{
 		transform: rotate(360deg);
 	}
+}
+
+@media (min-width: 1024px) {
+    main {
+		width: 80%;
+	}
+
+	.rodape{
+		width: 80%;
+	}
+}
+
+@media (min-width: 1150px) {
+    main {
+		width: 70%;
+	}
+
+	.rodape {
+		width: 70%;
+	}
+}
+
+@media (max-width: 400px) {
+    main .menu {
+        height: 70px;
+    }
 }
