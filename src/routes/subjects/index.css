@@ -1,0 +1,36 @@
+.infoSpy {
+	width: 390px;
+	margin: 0;
+	margin-left: 50px;
+	z-index: 1;
+    position: relative;
+	filter: drop-shadow(15px 5px 5px rgb(36, 24, 44));
+	position: absolute;
+}
+
+.infoSubject {
+	height: 200px;
+	background-color: #9686a3;
+	color: white;
+	border-bottom: 10px solid rgb(34, 21, 34);
+	border-top: 10px solid rgb(34, 21, 34);
+	border-right: 10px solid rgb(34, 21, 34);
+	border-left: 10px solid rgb(34, 21, 34);
+	margin-top: 70px;
+}
+
+.infoSubjectText {
+	min-height: 410px;
+	margin-left: 10px;
+	margin-right: 10px;
+	background-color: #7d5d89;
+	color: white;
+	border-bottom: 10px solid rgb(34, 21, 34);
+	border-top: 10px solid rgb(34, 21, 34);
+	border-right: 10px solid rgb(34, 21, 34);
+	border-left: 10px solid rgb(34, 21, 34);
+}
+
+.image-info{
+    width: 85%;
+}

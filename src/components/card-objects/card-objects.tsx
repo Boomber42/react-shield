@@ -1,5 +1,4 @@
 import "./index.css"
-import { Link } from "react-router-dom";
 import Skeleton from "../skeleton"
 import { useState } from "react";
 
@@ -21,13 +20,11 @@ export default function CardObjects(props: CardProps) {
             <div className="card-conteiner">
                 <h2 className="title">{props.title}</h2>
                 <div className="image-conteiner">
-                    <Link to={'objects'}>
-                        <img className="image" src={props.image} alt={props.imageAlt} onLoad={handleImageLoad} style={{
-                            display: isLoading ? 'none' : 'block'
-                        }} />
+                    <img className="image" src={props.image} alt={props.imageAlt} onLoad={handleImageLoad} style={{
+                        display: isLoading ? 'none' : 'block'
+                    }} />
 
-                        {isLoading ? <Skeleton className="image" /> : null}
-                    </Link>
+                    {isLoading ? <Skeleton className="image" /> : null}
                 </div>
             </div>
         </div>

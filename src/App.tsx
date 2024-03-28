@@ -1,7 +1,7 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import HomeRouter from './routes/homeRouter';
-import SubjectsRouter from './routes/subjectRoutes';
+import SubjectsRouter from './routes/subjects/subjectRoutes';
 import Menu from './components/menu';
 import Footer from './components/footer';
 import Header from './components/header';
