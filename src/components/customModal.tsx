@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 import Modal from 'react-modal';
 import Button from './button';
 import Api, { Subject } from '../helpers/api';
@@ -58,6 +58,20 @@ export default function CustomModal(props: CustomModalProps) {
     props.closeModal(true);
   }
 
+  const onSelectFile = (e: ChangeEvent<HTMLInputElement>) => {
+    var target = e.target as any;
+    const file = target.files?.[0];
+    if(file){
+      var reader = new FileReader();
+      reader.onload = () => {
+        var base64String = reader.result as string;
+        setImage(base64String);
+      }
+
+      reader.readAsDataURL(file);
+    }
+  }
+
   const setCropStatus = (isOpen: boolean) => {
     setCropOpen(isOpen);
   }
@@ -78,7 +92,7 @@ export default function CustomModal(props: CustomModalProps) {
         shouldCloseOnOverlayClick={false}
       >
         <form>
-          { !cropOpen && (
+          {!cropOpen && (
             <>
               <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Adicionar</h2>
               <div>Preencha o formulário com as informações</div>
@@ -103,18 +117,25 @@ export default function CustomModal(props: CustomModalProps) {
                   <label htmlFor="status"> Status </label>
                   <input type='text' placeholder='Status' id='status' onChange={(event) => setStatus(event.target.value)} />
                 </>) : null}
+
+                {['Veiculo', 'Objeto'].includes(props.typeModal) ? (<>
+                  <label> Adicione a imagem </label>
+                  <input type='file' name='imagem' accept='image/*' onChange={onSelectFile}/>
+                </>) : null}
               </div>
             </>
           )}
 
-          <ImageCropper setCropStatus={setCropStatus} closeImageModal={closeImageModal} />
+          {['Agente', 'Vingador'].includes(props.typeModal) ? (<>
+            <ImageCropper setCropStatus={setCropStatus} closeImageModal={closeImageModal} />
+          </>) : null}
 
-          { !cropOpen && (
+          {!cropOpen && (
             <div className='buttonStyle'>
               <Button name='Salvar' onClick={submitForm} loading={loading} />
               <Button name='Fechar' onClick={props.closeModal} loading={loading} />
             </div>
-          ) }
+          )}
 
           {loading ? (
             <div className='loader-default'>

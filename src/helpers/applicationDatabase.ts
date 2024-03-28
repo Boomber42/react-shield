@@ -66,7 +66,7 @@ export class ApplicationDatabase {
 
     async getSubjectsById(subjectId: string): Promise<Subject> {
         try {
-            const databaseReference: DatabaseReference = ref(firebase.database, `subjects/${subjectId}`)
+            const databaseReference: DatabaseReference = ref(firebase.database, `subjects/${subjectId}`|| `objects/${subjectId}`)
     
             const snapshot: DataSnapshot = await get(databaseReference);
     
