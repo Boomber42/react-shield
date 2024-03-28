@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import CardAgents from '../components/cardAgents';
-import CardItens from '../components/cardItens';
+import CardObjects from '../components/card-objects/card-objects';
 import Loading from '../components/loading';
 import Api, { Subject } from '../helpers/api';
 import Button from '../components/button';
@@ -68,7 +68,7 @@ function HomeRouter() {
 					}
 
 					if (item.type === 'Objeto' || item.type === 'Veiculo') {
-						card = <CardItens
+						card = <CardObjects
 							title={item.title}
 							imageAlt={item.alt}
 							image={item.image}

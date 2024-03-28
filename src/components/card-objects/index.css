@@ -1,0 +1,28 @@
+.card{
+    width: 50%;
+    float: left;
+    margin: 0%;
+    padding: 0%;
+}
+
+.card .title{
+    margin: 5px 160px;
+}
+
+.card .image-conteiner{
+    height: 150px;
+    display: flex;
+    justify-content: center;
+}
+
+.card-conteiner{
+    display: flex;
+    justify-content: center;
+    width: 350px;
+}
+
+.card .image{
+    width: 350px;
+	height: 150px; 
+	padding: 10px 100px 0;  
+}
