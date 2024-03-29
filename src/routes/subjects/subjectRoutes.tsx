@@ -5,6 +5,7 @@ import Loading from '../../components/loading';
 import { useParams } from 'react-router-dom'
 import Button from '../../components/button';
 import Skeleton from '../../components/skeleton';
+import Modal from '../../components/modal/modal';
 
 function RenderText({ info, type, value, skeletonWidth }: { info: string, type: string | undefined, value: string | undefined, skeletonWidth: string }) {
 	return (
@@ -15,8 +16,11 @@ function RenderText({ info, type, value, skeletonWidth }: { info: string, type: 
 }
 
 export default function SubjectsRouter() {
+	const isProduction: boolean = process.env.REACT_APP_IS_PRODUCTION ? JSON.parse(process.env.REACT_APP_IS_PRODUCTION) : false;
 	const params: any = useParams();
-	const [isLoading, setIsLoading] = useState<Boolean>(true);
+	const [isLoading, setIsLoading] = useState<boolean>(true);
+	const [descripition, setDescripition] = useState<string>();
+	const [isModalOpen, setModelOpen] = useState<boolean>(false);
 
 	let [subject, setSubject] = useState<Subject>();
 	let [loading, setLoading] = useState(false);
@@ -35,6 +39,30 @@ export default function SubjectsRouter() {
 
 	const handleImageLoad = () => {
 		setIsLoading(false)
+	}
+
+	function HandleDescriptionChange(e: any) {
+		setDescripition(e.target.value)
+	}
+
+	async function submitDescripition() {
+		setLoading(true);
+		const api = new Api();
+		var updateField = await api.patchSubject(params.id, {
+			descripition
+		});
+
+		if (updateField) {
+			setSubject(updateField);
+		}
+
+		setLoading(false);
+		setModelOpen(false);
+	}
+
+	function openDescriptionModel() {
+		setDescripition(subject?.descripition);
+		setModelOpen(true)
 	}
 
 	return (
@@ -64,11 +92,21 @@ export default function SubjectsRouter() {
 				</div>
 
 				<div className='infoSubjectText' style={{ margin: '50px 0px 50px 0px' }}>
-					<div className='buttonDescripition' >
-						<Button name='Descrição' onClick={() => { }} loading={loading} />
-					</div>
+					{!isProduction && (<div className='buttonDescripition' >
+						<Button name='Descrição' onClick={openDescriptionModel} loading={loading} />
+					</div>)}
 					<p style={{ padding: '5px' }}>{subject?.descripition}</p>
 				</div>
+
+				<Modal isModalOpen={isModalOpen} height='550px' width='800px'>
+					<h3> Adicionar descrição </h3>
+					<textarea className='textAreaModal' value={descripition} onChange={HandleDescriptionChange}>
+					</textarea>
+					<div className='buttonDescripition' >
+						<Button name='Salvar' onClick={() => submitDescripition()} />
+						<Button name='Fechar' onClick={() => setModelOpen(false)} />
+					</div>
+				</Modal>
 
 				{loading ? (
 					<div className='loader'>

@@ -1,5 +1,5 @@
 import firebase from '../firebase';
-import { ref, DatabaseReference, get, DataSnapshot, query, orderByChild, equalTo, Query, set } from 'firebase/database';
+import { ref, DatabaseReference, get, DataSnapshot, query, orderByChild, equalTo, Query, set, update } from 'firebase/database';
 import { Subject } from './api';
 
 export interface CreateSubject extends Omit<Subject, 'id'> { }
@@ -81,6 +81,18 @@ export class ApplicationDatabase {
         } catch (err) {
             console.log(err)
             return {} as Subject;
+        }
+    }
+
+    async patchSubject(subjectId: string, updateFields: object): Promise<Subject | undefined> {
+        try{
+            const databaseReference: DatabaseReference = ref(firebase.database, `subjects/${subjectId}`);
+            await update(databaseReference, updateFields);
+            var subject = await this.getSubjectsById(subjectId);
+            return subject as Subject;
+        }
+        catch(err){
+            console.log(err)
         }
     }
 }

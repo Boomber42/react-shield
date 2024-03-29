@@ -1,6 +1,5 @@
 import { ApplicationStorage } from '../helpers/applicationStorage';
 import { v4 as uuidv4 } from 'uuid';
-
 import { ApplicationDatabase, CreateSubject } from '../helpers/applicationDatabase';
 
 export interface Subject {
@@ -54,6 +53,15 @@ export default class Api {
             return await this.applicationDatabase.getSubjectsById(id);
         } catch(error){
             return {} as Subject;
+        }
+    }
+
+    async patchSubject(id: string, updateFields: object): Promise<Subject | undefined> {
+        try{
+            return await this.applicationDatabase.patchSubject(id, updateFields);
+        }
+        catch(err){
+            console.log(err)
         }
     }
 }
