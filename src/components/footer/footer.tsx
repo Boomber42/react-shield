@@ -1,3 +1,5 @@
+import "./index.css"
+
 interface SocialInfo {
     link: string,
     logo: string,

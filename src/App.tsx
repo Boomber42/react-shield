@@ -2,9 +2,9 @@ import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import HomeRouter from './routes/homeRouter';
 import SubjectsRouter from './routes/subjects/subjectRoutes';
-import Menu from './components/menu';
-import Footer from './components/footer';
-import Header from './components/header';
+import Menu from './components/menu/menu';
+import Footer from './components/footer/footer';
+import Header from './components/header/header';
 
 function App() {
 	return (

@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import CardAgents from '../components/cardAgents';
+import CardSubjects from '../components/card-subjects/card-subjects';
 import CardObjects from '../components/card-objects/card-objects';
-import Loading from '../components/loading';
+import Loading from '../components/loading/loading';
 import Api, { Subject } from '../helpers/api';
-import Button from '../components/button';
-import CustomModal from '../components/customModal';
+import Button from '../components/button/button';
+import CustomModal from '../components/customModal/customModal';
 import { useSearchParams } from 'react-router-dom';
 
 function HomeRouter() {
@@ -55,7 +55,7 @@ function HomeRouter() {
 				{itens?.map((item: Subject, index: number) => {
 					var card;
 					if (item.type === 'Agente' || item.type === 'Vingador') {
-						card = <CardAgents
+						card = <CardSubjects
 							id={item.id}
 							title={item.title}
 							imageAlt={item.alt}

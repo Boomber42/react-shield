@@ -1,0 +1,28 @@
+.buttonStyle{
+	display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+
+.buttonDescripition{
+	padding: 5px;
+}
+
+.buttonCustom{
+	padding: 5px 15px;
+    border: 1px solid black;
+	margin-left: 10px;
+	margin-right: 15px;
+	color: white;
+    background-color: rgb(72, 28, 72);
+    border-radius: 50px;
+    cursor: pointer;
+	outline: 0;
+	transition: 0.5s;
+}
+
+.buttonCustom:hover{
+	background-color: white;
+	color: black;
+
+}

@@ -1,9 +1,10 @@
+import "./index.css"
 import { ChangeEvent, useState } from 'react';
 import Modal from 'react-modal';
-import Button from './button';
-import Api, { Subject } from '../helpers/api';
-import Loading from '../components/loading';
-import ImageCropper from './imageCropper';
+import Button from '../button/button';
+import Api, { Subject } from '../../helpers/api';
+import Loading from '../loading/loading';
+import ImageCropper from '../imageCropper';
 
 const customStyles = {
   content: {
@@ -61,7 +62,7 @@ export default function CustomModal(props: CustomModalProps) {
   const onSelectFile = (e: ChangeEvent<HTMLInputElement>) => {
     var target = e.target as any;
     const file = target.files?.[0];
-    if(file){
+    if (file) {
       var reader = new FileReader();
       reader.onload = () => {
         var base64String = reader.result as string;
@@ -84,6 +85,7 @@ export default function CustomModal(props: CustomModalProps) {
   return (
     <div>
       <Modal
+        ariaHideApp={false}
         isOpen={props.isModalOpen}
         onAfterOpen={afterOpenModal}
         onRequestClose={() => props.closeModal()}
@@ -120,7 +122,7 @@ export default function CustomModal(props: CustomModalProps) {
 
                 {['Veiculo', 'Objeto'].includes(props.typeModal) ? (<>
                   <label> Adicione a imagem </label>
-                  <input type='file' name='imagem' accept='image/*' onChange={onSelectFile}/>
+                  <input type='file' name='imagem' accept='image/*' onChange={onSelectFile} />
                 </>) : null}
               </div>
             </>

@@ -1,5 +1,6 @@
+import "./index.css"
 import { Link } from "react-router-dom"
-import Skeleton from "./skeleton"
+import Skeleton from "../skeleton"
 import { useState } from "react"
 
 interface CardProps {
@@ -12,7 +13,7 @@ interface CardProps {
 	status: string,
 }
 
-export default function CardAgents(props: CardProps) {
+export default function CardSubjects(props: CardProps) {
 	const [isLoading, setIsLoading] = useState<Boolean>(true);
 
 	const handleImageLoad = () => {
@@ -38,10 +39,10 @@ export default function CardAgents(props: CardProps) {
 				</Link>
 			</div>
 			<blockquote>
-				<h3>{props.title ?? <Skeleton />}</h3>
-				<p>Nome: {props.name}</p>
-				<p>Codinome: {props.codeName}</p>
-				<p>Status: {props.status}</p>
+				<h3 className="bloco">{props.title ?? <Skeleton />}</h3>
+				<p className="bloco">Nome: {props.name}</p>
+				<p className="bloco">Codinome: {props.codeName}</p>
+				<p className="bloco">Status: {props.status}</p>
 			</blockquote>
 		</div>
 	)

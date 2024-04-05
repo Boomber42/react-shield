@@ -1,9 +1,9 @@
 import './index.css'
 import { useEffect, useState } from 'react';
 import Api, { Subject } from '../../helpers/api';
-import Loading from '../../components/loading';
+import Loading from '../../components/loading/loading';
 import { useParams } from 'react-router-dom'
-import Button from '../../components/button';
+import Button from '../../components/button/button';
 import Skeleton from '../../components/skeleton';
 import Modal from '../../components/modal/modal';
 

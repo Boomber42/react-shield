@@ -1,0 +1,76 @@
+.spy {
+    padding-bottom: 10px;
+    height: 400px;
+    width: 400px;
+    margin: 0 auto;
+}
+
+h3 {
+    margin: 10px 175px;
+}
+
+p {
+    text-align: justify;
+    margin: 20px 175px;
+}
+
+.image-skeleton {
+    height: 100%;
+    width: 100%;
+}
+
+.image {
+    height: 100%;
+    width: 100%;
+}
+
+blockquote {
+    background-color: #9686a3;
+    color: white;
+    margin: 0 50px 10px;
+    border-bottom: 10px solid rgb(34, 21, 34);
+    border-top: 10px solid rgb(34, 21, 34);
+    border-right: 10px solid rgb(34, 21, 34);
+    border-left: 10px solid rgb(34, 21, 34);
+}
+
+.bloco {
+    text-align: justify;
+    margin: 20px 175px;
+}
+
+@media (min-width: 150px) and (max-width: 700px) {
+    h3 {
+        font-size: 10px;
+    }
+
+    p {
+        font-size: 10px;
+    }
+
+    .bloco {
+        margin: 0 25px 5px;
+    }
+
+    main .image {
+        height: 60%;
+        width: 60%;
+        justify-content: center;
+        padding: 0px 75px 0px;;
+        margin-top: 20px;
+    }
+
+    .image-skeleton {
+        height: 60%;
+        width: 23%;
+        padding: 0px 75px 0px;
+    }
+
+    blockquote{
+        margin-top: -165px;
+        border-bottom: 5px solid rgb(34, 21, 34);
+        border-top: 5px solid rgb(34, 21, 34);
+        border-right: 5px solid rgb(34, 21, 34);
+        border-left: 5px solid rgb(34, 21, 34);
+    }
+}
