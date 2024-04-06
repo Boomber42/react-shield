@@ -16,6 +16,12 @@ export interface Subject {
     descripition: string
 }
 
+export interface User {
+    id: string,
+    email: string,
+    name: string
+}
+
 export default class Api {
     private applicationDatabase: ApplicationDatabase;
     private applicationStorage: ApplicationStorage;
@@ -68,16 +74,21 @@ export default class Api {
         }
     }
 
-    async singIn(email: string, password: string): Promise<any>{
-        const userCredential = await this.applicationAuth.signIn(email, password);
-        console.log('userCredential', userCredential);
+    async singIn(email: string, password: string): Promise<User | undefined>{
+        try {
+            const userCredential: any = await this.applicationAuth.signIn(email, password);
+    
+            const user: User | undefined = await this.applicationDatabase.getUserByCredential(email, userCredential);
+    
+            if (!user) {
+                return;
+            }
 
-        if(!userCredential){
+            return user;
+        } catch (err) {
+            console.error('err', err);
             return;
         }
-
-        const user = await this.applicationDatabase.getUserByProviderId(userCredential.uid);
-        console.log('user', user);
     }
 }
 

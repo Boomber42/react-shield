@@ -1,6 +1,7 @@
 import firebase from '../firebase';
 import { ref, DatabaseReference, get, DataSnapshot, query, orderByChild, equalTo, Query, set, update, limitToFirst, child } from 'firebase/database';
-import { Subject } from './api';
+import { Subject, User } from './api';
+import { UserCredential, User as AuthUser } from 'firebase/auth';
 
 export interface CreateSubject extends Omit<Subject, 'id'> { }
 
@@ -39,7 +40,7 @@ export class ApplicationDatabase {
     
             return this.transformSubjects(response);
         } catch (err) {
-            console.log(err)
+            console.error(err)
             return [];
         }
     }
@@ -59,7 +60,7 @@ export class ApplicationDatabase {
                 }
             } as Subject;
         } catch (err) {
-            console.log('err', err);
+            console.error('err', err);
             return { } as Subject;
         }
     }
@@ -79,7 +80,7 @@ export class ApplicationDatabase {
                 }
             } as Subject;
         } catch (err) {
-            console.log(err)
+            console.error(err)
             return {} as Subject;
         }
     }
@@ -92,32 +93,45 @@ export class ApplicationDatabase {
             return subject as Subject;
         }
         catch(err){
-            console.log(err)
+            console.error(err)
         }
     }
 
-    async getUserByProviderId(userProviderId: string): Promise<any>{
+    async getUserByCredential(userEmail: string, userCredential: UserCredential): Promise<User | undefined>{
         try {
+            if (!userCredential || !userCredential.user) {
+                return;
+            }
+
+            const authUser: AuthUser  = userCredential.user;
+
             const databaseReference: DatabaseReference = ref(firebase.database, `users`);
-
-            // const dataQuery: Query = query(databaseReference, child(`providers/${userProviderId}`), equalTo(true), limitToFirst(1));
-            const dataQuery = child(databaseReference, `providers`);
-            const dataQuery1 = child(dataQuery, `${userProviderId}`);
-            const dataQuery2 = child(dataQuery1, `true`);
-            const snapshot: DataSnapshot = await get(dataQuery2);
-            console.log('snapshot', snapshot);
+            const dataQuery: Query = query(databaseReference, orderByChild('email'), equalTo(userEmail), limitToFirst(1));
+            const snapshot: DataSnapshot = await get(dataQuery);
             const response: any = snapshot.val();
-    
-            return {
-                ...response,
-                ...{
-                    id: userProviderId
-                }
-            } as Subject;
 
+            if (!response) {
+                return;
+            }
+
+            const userId: string = Object.keys(response)[0];
+
+            const { email, name, providers } = response[userId];
+
+            if (!providers[authUser.uid]) {
+                return;
+            }
+
+            const user: any = {
+                id: userId,
+                email,
+                name
+            };
+
+            return user;
         } catch (err) {
-            console.log(err)
-            return {};
+            console.error(err)
+            return;
         }
     }
 }
