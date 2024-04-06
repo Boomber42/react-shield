@@ -1,6 +1,7 @@
-import { ApplicationStorage } from '../helpers/applicationStorage';
+import { ApplicationStorage } from './applicationStorage';
 import { v4 as uuidv4 } from 'uuid';
-import { ApplicationDatabase, CreateSubject } from '../helpers/applicationDatabase';
+import { ApplicationDatabase, CreateSubject } from './applicationDatabase';
+import { ApplicationAuth } from './applicationAuth'
 
 export interface Subject {
     createAt?: Date,
@@ -18,10 +19,12 @@ export interface Subject {
 export default class Api {
     private applicationDatabase: ApplicationDatabase;
     private applicationStorage: ApplicationStorage;
+    private applicationAuth: ApplicationAuth;
 
     constructor() {
         this.applicationDatabase = new ApplicationDatabase();
         this.applicationStorage = new ApplicationStorage();
+        this.applicationAuth = new ApplicationAuth();
     }
 
     async getSubjectsByType(type: string): Promise<Subject[]> {
@@ -63,6 +66,18 @@ export default class Api {
         catch(err){
             console.log(err)
         }
+    }
+
+    async singIn(email: string, password: string): Promise<any>{
+        const userCredential = await this.applicationAuth.signIn(email, password);
+        console.log('userCredential', userCredential);
+
+        if(!userCredential){
+            return;
+        }
+
+        const user = await this.applicationDatabase.getUserByProviderId(userCredential.uid);
+        console.log('user', user);
     }
 }
 

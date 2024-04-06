@@ -1,6 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { getStorage, FirebaseStorage } from 'firebase/storage';
 import { getDatabase, Database } from 'firebase/database';
+import { getAuth, Auth } from "firebase/auth";
 
 const firebaseConfig: any = {
     apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -15,15 +16,18 @@ const firebaseConfig: any = {
 const app = initializeApp(firebaseConfig);
 const storage: FirebaseStorage = getStorage(app);
 const database: Database = getDatabase(app);
+const auth: Auth = getAuth(app);
 
 interface Firebase {
     storage: FirebaseStorage,
     database: Database,
+    auth: Auth,
 };
 
 const firebase: Firebase = {
     storage,
-    database
+    database,
+    auth,
 };
 
 export default firebase;

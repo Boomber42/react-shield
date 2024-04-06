@@ -1,5 +1,5 @@
 import firebase from '../firebase';
-import { ref, DatabaseReference, get, DataSnapshot, query, orderByChild, equalTo, Query, set, update } from 'firebase/database';
+import { ref, DatabaseReference, get, DataSnapshot, query, orderByChild, equalTo, Query, set, update, limitToFirst, child } from 'firebase/database';
 import { Subject } from './api';
 
 export interface CreateSubject extends Omit<Subject, 'id'> { }
@@ -93,6 +93,31 @@ export class ApplicationDatabase {
         }
         catch(err){
             console.log(err)
+        }
+    }
+
+    async getUserByProviderId(userProviderId: string): Promise<any>{
+        try {
+            const databaseReference: DatabaseReference = ref(firebase.database, `users`);
+
+            // const dataQuery: Query = query(databaseReference, child(`providers/${userProviderId}`), equalTo(true), limitToFirst(1));
+            const dataQuery = child(databaseReference, `providers`);
+            const dataQuery1 = child(dataQuery, `${userProviderId}`);
+            const dataQuery2 = child(dataQuery1, `true`);
+            const snapshot: DataSnapshot = await get(dataQuery2);
+            console.log('snapshot', snapshot);
+            const response: any = snapshot.val();
+    
+            return {
+                ...response,
+                ...{
+                    id: userProviderId
+                }
+            } as Subject;
+
+        } catch (err) {
+            console.log(err)
+            return {};
         }
     }
 }
