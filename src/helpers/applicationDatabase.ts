@@ -1,7 +1,6 @@
 import firebase from '../firebase';
 import { ref, DatabaseReference, get, DataSnapshot, query, orderByChild, equalTo, Query, set, update, limitToFirst, child } from 'firebase/database';
 import { Subject, User } from './api';
-import { UserCredential, User as AuthUser } from 'firebase/auth';
 
 export interface CreateSubject extends Omit<Subject, 'id'> { }
 
@@ -97,14 +96,8 @@ export class ApplicationDatabase {
         }
     }
 
-    async getUserByCredential(userEmail: string, userCredential: UserCredential): Promise<User | undefined>{
+    async getUserByCredential(userEmail: string, userProviderId: string): Promise<User | undefined>{
         try {
-            if (!userCredential || !userCredential.user) {
-                return;
-            }
-
-            const authUser: AuthUser  = userCredential.user;
-
             const databaseReference: DatabaseReference = ref(firebase.database, `users`);
             const dataQuery: Query = query(databaseReference, orderByChild('email'), equalTo(userEmail), limitToFirst(1));
             const snapshot: DataSnapshot = await get(dataQuery);
@@ -118,7 +111,7 @@ export class ApplicationDatabase {
 
             const { email, name, providers } = response[userId];
 
-            if (!providers[authUser.uid]) {
+            if (!providers[userProviderId]) {
                 return;
             }
 

@@ -70,15 +70,19 @@ export default class Api {
             return await this.applicationDatabase.patchSubject(id, updateFields);
         }
         catch(err){
-            console.log(err)
+            console.error(err)
         }
     }
 
     async singIn(email: string, password: string): Promise<User | undefined>{
         try {
             const userCredential: any = await this.applicationAuth.signIn(email, password);
+
+            if (!userCredential || !userCredential.user) {
+                return;
+            }
     
-            const user: User | undefined = await this.applicationDatabase.getUserByCredential(email, userCredential);
+            const user: User | undefined = await this.applicationDatabase.getUserByCredential(email, userCredential.user.uid);
     
             if (!user) {
                 return;

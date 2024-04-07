@@ -1,33 +1,40 @@
-import Button from "../../components/button/button";
+import "./index.css"
 import Api from "../../helpers/api";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom"
 
 export default function LoginRouter() {
-    const submitForm = async () => {
+    const navigate = useNavigate();
+    const [email, setEmail] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
+
+    useEffect(() => {
+        const user = JSON.parse(localStorage.getItem('user')!);
+        if(user){
+            navigate('/');
+        }
+    }, [])
+
+    const submitForm = async (event: any) => {
+        event.preventDefault();
         const api = new Api();
-        api.singIn('', '')
+        var user = await api.singIn(email, password);
+        if(!user){
+            return;
+        }
+        localStorage.setItem('user', JSON.stringify(user));
+        navigate('/');
     }
-    
+
     return (
-        <div style={{
-            height: '100vh'
-        }}>
-            <form onSubmit={() => console.log('formulario submetido')} style={{
-                width: '500px',
-                height: '500px',
-                backgroundColor: 'red',
-                margin: '0 auto',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                padding: '10px'
-            }}>
+        <div className="bodyPage">
+            <form onSubmit={submitForm} className="fromStyle">
                 <label htmlFor="email">Email</label>
-                <input type="email" id="email" placeholder="Insira um email válido" name="email"></input>
+                <input type="email" id="email" placeholder="Insira um email válido" name="email" className="inputStyle" onChange={(event) => setEmail(event.target.value)} />
 
                 <label htmlFor="password">Senha</label>
-                <input type="password" id="password" placeholder="Digite sua senha" name="password"></input>
-                {/* <input type="submit" ></input> */}
-                <Button name='cadastrar' onClick={submitForm}></Button>
+                <input type="password" id="password" placeholder="Digite sua senha" name="password" onChange={(event) => setPassword(event.target.value)} />
+                <input type="submit" disabled={!email || !password} ></input>
             </form>
         </div>
     )

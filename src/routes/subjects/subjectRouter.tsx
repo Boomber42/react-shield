@@ -16,7 +16,7 @@ function RenderText({ info, type, value, skeletonWidth }: { info: string, type: 
 }
 
 export default function SubjectsRouter() {
-	const isProduction: boolean = process.env.REACT_APP_IS_PRODUCTION ? JSON.parse(process.env.REACT_APP_IS_PRODUCTION) : false;
+	const userIsLoggedIn: boolean = !!localStorage.getItem('user');
 	const params: any = useParams();
 	const [isLoading, setIsLoading] = useState<boolean>(true);
 	const [descripition, setDescripition] = useState<string>();
@@ -92,7 +92,7 @@ export default function SubjectsRouter() {
 				</div>
 
 				<div className='infoSubjectText' style={{ margin: '50px 0px 50px 0px' }}>
-					{!isProduction && (<div className='buttonDescripition' >
+					{userIsLoggedIn && (<div className='buttonDescripition' >
 						<Button name='Descrição' onClick={openDescriptionModel} loading={loading} />
 					</div>)}
 					<p style={{ padding: '5px' }}>{subject?.descripition}</p>

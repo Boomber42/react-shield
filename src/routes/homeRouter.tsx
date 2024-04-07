@@ -8,7 +8,7 @@ import CustomModal from '../components/customModal/customModal';
 import { useSearchParams } from 'react-router-dom';
 
 function HomeRouter() {
-	const isProduction: boolean = process.env.REACT_APP_IS_PRODUCTION ? JSON.parse(process.env.REACT_APP_IS_PRODUCTION) : false;
+	const userIsLoggedIn: boolean = !!localStorage.getItem('user');
 
 	const [searchParams] = useSearchParams();
 	let [itens, setItens] = useState<Subject[]>([]);
@@ -46,7 +46,7 @@ function HomeRouter() {
 	return (
 		<div>
 			<div className='counteiner'>
-				{ !isProduction ? (
+				{userIsLoggedIn ? (
 					<div className='buttonStyle'>
 						<Button name='Adicionar novo' onClick={openModal} />
 					</div>
