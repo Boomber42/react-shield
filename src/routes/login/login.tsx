@@ -29,12 +29,12 @@ export default function LoginRouter() {
     return (
         <div className="bodyPage">
             <form onSubmit={submitForm} className="fromStyle">
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email" className="labelStyle">Email:</label>
                 <input type="email" id="email" placeholder="Insira um email válido" name="email" className="inputStyle" onChange={(event) => setEmail(event.target.value)} />
 
-                <label htmlFor="password">Senha</label>
-                <input type="password" id="password" placeholder="Digite sua senha" name="password" onChange={(event) => setPassword(event.target.value)} />
-                <input type="submit" disabled={!email || !password} ></input>
+                <label htmlFor="password" className="labelStyle">Senha:</label>
+                <input type="password" id="password" placeholder="Digite sua senha" name="password" className="inputStyle" onChange={(event) => setPassword(event.target.value)} />
+                <input type="submit" disabled={!email || !password} className="inoputButtonStyle" />
             </form>
         </div>
     )

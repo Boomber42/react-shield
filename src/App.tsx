@@ -6,6 +6,7 @@ import Menu from './components/menu/menu';
 import Footer from './components/footer/footer';
 import Header from './components/header/header';
 import LoginRouter from './routes/login/login'
+import NotFound from './routes/notFound/notFoundRouter';
 
 function App() {
 	return (
@@ -17,6 +18,7 @@ function App() {
 					<Route path='/' element={<HomeRouter />} />
 					<Route path='/subjects/:id' element={<SubjectsRouter />} />
 					<Route path= '/login' element={<LoginRouter/>}/>
+					<Route path='*' element={<NotFound/>}/>
 				</Routes>
 			</main>
 			<Footer />
