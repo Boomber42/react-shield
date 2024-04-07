@@ -1,0 +1,11 @@
+.bodyStyle{
+    height: 50vh;
+}
+
+.errorStyle{
+    display: grid;
+    margin-top: 500px;
+    justify-content: center;
+    font-family: "math";
+    font-size: revert;
+}

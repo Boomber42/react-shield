@@ -1,5 +1,9 @@
+import "./index.css"
+
 export default function NotFound(){
     return(
-        <h1>Error bosta</h1>
+        <div className="bodyStyle">
+            <h1 className="errorStyle">😵❌Error 404 Página não encontrada.❌😵</h1>
+        </div>
     )
 }
