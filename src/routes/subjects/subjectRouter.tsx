@@ -67,6 +67,12 @@ export default function SubjectsRouter() {
 
 	return (
 		<div className='counteiner'>
+			{userIsLoggedIn ? (
+				<div className='buttonStyle'>
+					<Button name='Logout' onClick={() => { }} />
+				</div>
+			) : null}
+			
 			<div style={{
 				padding: "25px 50px 0 50px"
 			}}>
@@ -95,6 +101,7 @@ export default function SubjectsRouter() {
 					{userIsLoggedIn && (<div className='buttonDescripition' >
 						<Button name='Descrição' onClick={openDescriptionModel} loading={loading} />
 					</div>)}
+
 					<p style={{ padding: '5px' }}>{subject?.descripition}</p>
 				</div>
 

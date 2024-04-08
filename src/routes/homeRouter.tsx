@@ -49,6 +49,7 @@ function HomeRouter() {
 				{userIsLoggedIn ? (
 					<div className='buttonStyle'>
 						<Button name='Adicionar novo' onClick={openModal} />
+						<Button name='Logout' onClick={() => {}}/>
 					</div>
 				) : null}
 				<CustomModal isModalOpen={isModalOpen} closeModal={closeModal} typeModal={currentType} />
