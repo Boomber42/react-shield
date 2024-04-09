@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom'
 import Button from '../../components/button/button';
 import Skeleton from '../../components/skeleton';
 import Modal from '../../components/modal/modal';
+import Logout from '../../components/logout/logout';
 
 function RenderText({ info, type, value, skeletonWidth }: { info: string, type: string | undefined, value: string | undefined, skeletonWidth: string }) {
 	return (
@@ -69,7 +70,7 @@ export default function SubjectsRouter() {
 		<div className='counteiner'>
 			{userIsLoggedIn ? (
 				<div className='buttonStyle'>
-					<Button name='Logout' onClick={() => { }} />
+					<Logout/>
 				</div>
 			) : null}
 			
