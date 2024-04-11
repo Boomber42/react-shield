@@ -95,7 +95,7 @@
 @media (min-width: 390px) and (max-width: 844px){
 	.image-info{
 		width: 40%;
-		padding: 6px 0px 0 7px;
+		padding: 6px 0px 0 0px;
 	}
 
 	.diveStyle{
@@ -109,7 +109,7 @@
 
 	.infoSubject {
 		height: 120px;
-		margin-top: 20px;
+		margin: 20px -8px 0px -8px;
 		border-bottom: 5px solid rgb(34, 21, 34);
         border-top: 5px solid rgb(34, 21, 34);
         border-right: 5px solid rgb(34, 21, 34);

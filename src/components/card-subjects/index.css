@@ -118,6 +118,7 @@ blockquote {
     }
 
     blockquote{
+        margin: 0 -10px 10px;
         margin-top: -165px;
         border-bottom: 5px solid rgb(34, 21, 34);
         border-top: 5px solid rgb(34, 21, 34);
