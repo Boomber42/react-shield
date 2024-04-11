@@ -109,3 +109,10 @@ p {
 		width: 70%;
 	}
 }
+
+/* MotoGPower */
+@media (min-width: 412px) and (max-width: 823px){
+	main .counteiner {
+		min-height: 0;
+	}
+}

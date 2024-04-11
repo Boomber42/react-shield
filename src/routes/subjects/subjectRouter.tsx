@@ -74,9 +74,7 @@ export default function SubjectsRouter() {
 				</div>
 			) : null}
 			
-			<div style={{
-				padding: "25px 50px 0 50px"
-			}}>
+			<div className='diveStyle'>
 				<div className='infoSpy'>
 					<img className="image-info" src={subject?.image} alt={subject?.image} onLoad={handleImageLoad} style={{
 						display: isLoading ? 'none' : 'block'
@@ -116,11 +114,11 @@ export default function SubjectsRouter() {
 					</div>
 				</Modal>
 
-				{loading ? (
+				{/* {loading ? (
 					<div className='loader'>
 						<Loading />
 					</div>
-				) : ''}
+				) : ''} */}
 
 			</div>
 		</div>
