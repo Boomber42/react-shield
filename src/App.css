@@ -116,3 +116,10 @@ p {
 		min-height: 0;
 	}
 }
+
+/* Iphone 12 pro */
+@media screen and (max-width: 844px){
+	main{
+		margin: 0 0 0 10px;
+	}
+}

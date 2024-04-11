@@ -38,3 +38,10 @@ main .menu ul li h2 a:hover{
         height: 70px;
     }
 }
+
+/* Iphone 12 pro */
+@media (min-width: 390px) and (max-width: 844px){
+	main .menu {
+        height: 30px;
+    }
+}

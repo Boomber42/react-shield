@@ -1,24 +1,24 @@
-.rodape{
-    background-color: rgb(41, 39, 39);
-    color: #f2fffc;
+.rodape {
+	background-color: rgb(41, 39, 39);
+	color: #f2fffc;
 	height: 50px;
 	clear: both;
 	width: var(--default-width);
 	margin: 0 auto;
 }
 
-.rodape h4{
+.rodape h4 {
 	padding: 10px 0 0 5px;
 	float: left;
 }
 
-.rodape ul li{
+.rodape ul li {
 	display: block;
 	margin: 0 5px 0 0;
 	float: right;
 }
 
-.rodape .icones img{
+.rodape .icones img {
 	width: 30px;
 	height: 30px;
 	margin-top: 10px;
@@ -26,7 +26,7 @@
 }
 
 @media (min-width: 1024px) {
-	.rodape{
+	.rodape {
 		width: 80%;
 	}
 }
@@ -34,5 +34,12 @@
 @media (min-width: 1150px) {
 	.rodape {
 		width: 70%;
+	}
+}
+
+/* Iphone 12 pro */
+@media screen and (max-width: 844px) {
+	.rodape {
+		margin: 0 0 0 10px;
 	}
 }

@@ -95,3 +95,33 @@ blockquote {
         border-left: 5px solid rgb(34, 21, 34);
     }
 }
+
+/* Iphone 12 pro */
+@media (min-width: 390px) and (max-width: 844px){
+    .spy {
+        padding-bottom: 45px;
+        height: 320px;
+        width: 320px;
+        margin: 0 auto;
+    }
+
+    main .image {
+        height: 60%;
+        width: 60%;
+        margin: 0px auto 0 60px;
+    }
+
+    .image-skeleton {
+        height: 60%;
+        width: 60%;
+        margin: 0px auto 0px 0px;
+    }
+
+    blockquote{
+        margin-top: -165px;
+        border-bottom: 5px solid rgb(34, 21, 34);
+        border-top: 5px solid rgb(34, 21, 34);
+        border-right: 5px solid rgb(34, 21, 34);
+        border-left: 5px solid rgb(34, 21, 34);
+    }
+}
