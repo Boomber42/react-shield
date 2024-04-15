@@ -116,6 +116,49 @@ blockquote {
     }
 }
 
+/* Resolução pequena */
+@media (min-width: 171px) and (max-width:200px){
+    .spy {
+        padding: 0 0 53px 0;
+        height: 222px;
+        width: 112px;
+        margin: 0 auto;
+    }
+
+    main .image {
+        height: 45%;
+        width: 85%;
+        margin: 0;
+    }
+
+    .image-skeleton {
+        height: 45%;
+        width: 85%;
+        margin: 0;
+    }
+
+    blockquote{
+        width: 100%;
+        margin: -165px -14px 12px -11px;
+        border-bottom: 4px solid rgb(34, 21, 34);
+        border-top: 4px solid rgb(34, 21, 34);
+        border-right: 4px solid rgb(34, 21, 34);
+        border-left: 4px solid rgb(34, 21, 34);
+    }
+
+    h3{
+		font-size: 9px;
+	}
+
+    p{
+        font-size: 6px;
+    }
+
+    .bloco{
+        margin: 0px 31px 0px 6px;
+    }
+}
+
 /* MotoGPower */
 @media (min-width: 412px) and (max-width: 823px) {
     main .image {

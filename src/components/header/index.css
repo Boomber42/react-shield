@@ -8,52 +8,73 @@ main .topo {
 	padding-top: 10px;
 }
 
-main .topo img{
+main .topo img {
 	width: 140px;
-    float: left;
+	float: left;
 	margin-right: 15px;
 	margin-left: 15px;
 }
 
-main .topo h1{
+main .topo h1 {
 	margin-top: 28px;
 	text-transform: uppercase;
-	
+
 }
 
 /* Menor resolução */
-@media (max-width: 170px){
+@media (max-width: 170px) {
 	main .topo {
-        height: 70px;
+		height: 70px;
 		border-bottom: 4px solid rgb(0, 0, 0);
-    }
+	}
 
-    main .topo h1 {
+	main .topo h1 {
 		font-size: small;
 		margin: 22px 0 0 0;
 		padding: 0 0 0 45px;
-    }
+	}
 
-    main .topo img{
+	main .topo img {
 		height: 35px;
 		width: 35px;
 		margin: 12px 0 0 2px;
-    }
+	}
 }
 
-@media (min-width: 171px) and (max-width: 600px) {
-    main .topo {
-        height: 70px;
-    }
+/* Resolução pequena */
+@media (min-width: 171px) and (max-width:200px) {
+	main .topo {
+		height: 70px;
+		border-bottom: 4px solid rgb(0, 0, 0);
+	}
 
-    main .topo h1 {
-        font-size: smaller;
+	main .topo h1 {
+		font-size: large;
+		margin: 20px 0 0 0;
+		padding: 0 0 0 50px;
+	}
+
+	main .topo img {
+		height: 40px;
+		width: 40px;
+		margin: 15px 0px 0px 5px;
+	}
+}
+
+
+@media (min-width: 201px) and (max-width: 600px) {
+	main .topo {
+		height: 70px;
+	}
+
+	main .topo h1 {
+		font-size: smaller;
 		margin-top: -6px;
-    }
+	}
 
-    main .topo img{
-        height: 70px;
-        width: 70px;
+	main .topo img {
+		height: 70px;
+		width: 70px;
 		margin-top: -4px;
-    }
+	}
 }

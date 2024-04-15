@@ -101,7 +101,7 @@ export default function SubjectsRouter() {
 						<Button name='Descrição' onClick={openDescriptionModel} loading={loading} />
 					</div>)}
 
-					<p style={{ padding: '5px' }}>{subject?.descripition}</p>
+					<p className='descripition'>{subject?.descripition}</p>
 				</div>
 
 				<Modal isModalOpen={isModalOpen} height='550px' width='800px'>

@@ -45,7 +45,19 @@ main .menu ul li h2 a:hover{
 	}
 }
 
-@media (max-width: 400px){
+/* Resolução pequena */
+@media (min-width: 171px) and (max-width:200px){
+	main .menu {
+        height: 50px;
+    }
+
+	.menu ul {
+		padding: 0px;
+		font-size: small;
+	}
+}
+
+@media (min-width: 201px) and (max-width: 400px){
     main .menu {
         height: 70px;
     }

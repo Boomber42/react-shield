@@ -55,6 +55,24 @@
 	}
 }
 
+/* Resolução pequena */
+@media (min-width: 171px) and (max-width:200px){
+	.rodape h4 {
+		font-size: x-small;
+	}
+
+	.rodape {
+		margin: 0 0 0 3px;;
+		height: 35px;
+	}
+
+	.rodape .icones img {
+		width: 12px;
+		height: 12px;
+		margin: 10px 0 0 0;
+	}
+}
+
 /* Iphone 12 pro */
 @media (min-width: 171) and (max-width: 844px) {
 	.rodape {

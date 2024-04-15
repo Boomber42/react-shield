@@ -115,6 +115,21 @@ p {
 	main{
 		margin: 0 0 0 3px;;
 	}
+
+	main .counteiner{
+		padding: 55px 0 0 0;
+	}
+}
+
+/* Resolução pequena */
+@media (min-width: 171px) and (max-width:200px){
+	main{
+		margin: 0 0 0 3px;
+	}
+
+	main .counteiner{
+		padding: 40px 0 0 0;
+	}
 }
 
 /* MotoGPower */
@@ -125,7 +140,7 @@ p {
 }
 
 /* Iphone 12 pro */
-@media (min-width: 171px) and (max-width: 844px){
+@media (min-width: 390px) and (max-width: 844px){
 	main{
 		margin: 0 0 0 10px;
 	}
