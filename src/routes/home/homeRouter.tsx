@@ -1,13 +1,14 @@
+import './index.css'
 import { useEffect, useState } from 'react';
-import CardSubjects from '../components/card-subjects/card-subjects';
-import CardObjects from '../components/card-objects/card-objects';
-import Loading from '../components/loading/loading';
-import Api, { Subject } from '../helpers/api';
-import Button from '../components/button/button';
-import CustomModal from '../components/customModal/customModal';
+import CardSubjects from '../../components/card-subjects/card-subjects';
+import CardObjects from '../../components/card-objects/card-objects';
+import Loading from '../../components/loading/loading';
+import Api, { Subject } from '../../helpers/api';
+import Button from '../../components/button/button';
+import CustomModal from '../../components/customModal/customModal';
 import { useSearchParams } from 'react-router-dom';
-import Logout from '../components/logout/logout';
-import NotFound from './notFound/notFoundRouter';
+import Logout from '../../components/logout/logout';
+import NotFound from '../notFound/notFoundRouter';
 
 function HomeRouter() {
 	const userIsLoggedIn: boolean = !!localStorage.getItem('user');
@@ -56,7 +57,7 @@ function HomeRouter() {
 			{error ? (
 				<NotFound />
 			) : (
-				<div style={{padding: '20px'}}>
+				<div className='div-style'>
 					{userIsLoggedIn ? (
 						<div className='buttonStyle'>
 							<Button name='Adicionar novo' onClick={openModal} />

@@ -21,7 +21,27 @@ main .topo h1{
 	
 }
 
-@media (max-width: 600px) {
+/* Menor resolução */
+@media (max-width: 170px){
+	main .topo {
+        height: 70px;
+		border-bottom: 4px solid rgb(0, 0, 0);
+    }
+
+    main .topo h1 {
+		font-size: small;
+		margin: 22px 0 0 0;
+		padding: 0 0 0 45px;
+    }
+
+    main .topo img{
+		height: 35px;
+		width: 35px;
+		margin: 12px 0 0 2px;
+    }
+}
+
+@media (min-width: 171px) and (max-width: 600px) {
     main .topo {
         height: 70px;
     }

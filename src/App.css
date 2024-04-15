@@ -110,6 +110,13 @@ p {
 	}
 }
 
+/* Menor resolução */
+@media (max-width: 170px){
+	main{
+		margin: 0 0 0 3px;;
+	}
+}
+
 /* MotoGPower */
 @media (min-width: 412px) and (max-width: 823px){
 	main .counteiner {
@@ -118,7 +125,7 @@ p {
 }
 
 /* Iphone 12 pro */
-@media screen and (max-width: 844px){
+@media (min-width: 171px) and (max-width: 844px){
 	main{
 		margin: 0 0 0 10px;
 	}

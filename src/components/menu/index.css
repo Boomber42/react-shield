@@ -33,6 +33,18 @@ main .menu ul li h2 a:hover{
 	font-size: 20px;
 }
 
+/* Menor resolução */
+@media (max-width: 170px){
+	main .menu {
+        height: 30px;
+    }
+
+	.menu ul {
+		padding: 14px 17px 14px 30px;
+		font-size: x-small;
+	}
+}
+
 @media (max-width: 400px){
     main .menu {
         height: 70px;
