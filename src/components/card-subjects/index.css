@@ -216,6 +216,14 @@ blockquote {
         border-left: 5px solid rgb(34, 21, 34);
     }
 
+    h3{
+		font-size: 12px;
+	}
+
+    p{
+        font-size: 10px;
+    }
+
 }
 
 /* Iphone 12 pro */
