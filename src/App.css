@@ -145,3 +145,10 @@ p {
 		margin: 0 0 0 10px;
 	}
 }
+
+/* Samsung Galaxy S8 */
+@media (min-width: 360px) and (max-width: 740px) {
+	main .counteiner {
+		min-height: 50vh;
+	}
+}

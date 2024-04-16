@@ -63,6 +63,18 @@ main .menu ul li h2 a:hover{
     }
 }
 
+/* Samsung Galaxy S8 */
+@media (min-width: 360px) and (max-width: 740px) {
+	main .menu {
+        height: 30px;
+    }
+
+	.menu ul {
+		padding: 14px 17px 14px 17px;
+		font-size: 15px;
+	}
+}
+
 /* Iphone 12 pro */
 @media (min-width: 390px) and (max-width: 844px){
 	main .menu {

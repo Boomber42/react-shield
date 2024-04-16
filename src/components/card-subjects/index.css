@@ -182,6 +182,42 @@ blockquote {
     }
 }
 
+/* Samsung Galaxy S8 */
+@media (min-width: 360px) and (max-width: 740px) {
+    .div-style{
+        padding: 35px 15px 0 15px;
+    }
+
+    .spy {
+        padding-bottom: 5px;
+        height: 300px;
+        width: 300px;
+        margin: 0 auto;
+    }
+
+    main .image {
+        height: 50%;
+        width: 50%;
+        margin: 0px auto;
+    }
+
+    .image-skeleton {
+        height: 45%;
+        width: 100%;
+        margin: 0px auto;
+    }
+
+    blockquote{
+        margin: 0 -10px 10px;
+        margin-top: -150px;
+        border-bottom: 5px solid rgb(34, 21, 34);
+        border-top: 5px solid rgb(34, 21, 34);
+        border-right: 5px solid rgb(34, 21, 34);
+        border-left: 5px solid rgb(34, 21, 34);
+    }
+
+}
+
 /* Iphone 12 pro */
 @media (min-width: 390px) and (max-width: 844px){
     .spy {

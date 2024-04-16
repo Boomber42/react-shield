@@ -38,3 +38,19 @@
     margin-left: 40px;
     font-family: "Open Sans Condensed", "Arial", sans-serif;
 }
+
+/* Samsung Galaxy S8 */
+@media (min-width: 360px) and (max-width: 740px) {
+    .bodyPage{
+        padding-top: 85px;
+    }
+
+    .fromStyle{
+        width: 260px;
+        height: 295px;
+    }
+
+    .inoputButtonStyle{
+        margin: -10px 85px;
+    }
+}
