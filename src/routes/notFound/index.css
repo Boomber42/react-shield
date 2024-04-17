@@ -1,6 +1,6 @@
 .bodyStyle {
     height: 50vh;
-    padding: 204px 0 0 0;
+    padding: 184px 0 0 0;
 }
 
 .errorStyle {
@@ -48,8 +48,22 @@
     }
 }
 
+/* Resolução 301 x 362 */
+@media (min-width: 301px) and (max-width:389px){
+    .bodyStyle {
+        padding: 280px 0 0 0px;
+        height: 50vh;
+    }
+
+    .errorStyle {
+        margin: 0 auto;
+        font-size: medium;
+    }
+}
+
+
 /* Samsung Galaxy S8 */
-@media (min-width: 360px) and (max-width: 740px) {
+/* @media (min-width: 360px) and (max-width: 740px) {
     .bodyStyle {
         padding: 178px 0 0 0px;
         height: 50vh;
@@ -59,7 +73,7 @@
         margin: 0 auto;
         font-size: medium;
     }
-}
+} */
 
 /* Iphone 12 pro */
 @media (min-width: 390px) and (max-width: 844px) {

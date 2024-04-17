@@ -146,16 +146,29 @@ p {
 	}
 }
 
+/* Resolução 301 x 362 */
+@media (min-width: 301px) and (max-width:389px){
+	main{
+		height: 50%;
+		min-height: 76vh;
+	}
+}
+
 /* Iphone 12 pro */
 @media (min-width: 390px) and (max-width: 844px){
 	main{
 		margin: 0 0 0 10px;
 	}
+
+	main .counteiner{
+		height: 50%;
+		min-height: 80vh;
+	}
 }
 
 /* Samsung Galaxy S8 */
-@media (min-width: 360px) and (max-width: 740px) {
+/* @media (min-width: 360px) and (max-width: 740px) {
 	main .counteiner {
 		min-height: 50vh;
 	}
-}
+} */
