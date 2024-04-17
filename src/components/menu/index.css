@@ -40,7 +40,7 @@ main .menu ul li h2 a:hover{
     }
 
 	.menu ul {
-		padding: 14px 17px 14px 30px;
+		padding: -1px 17px 14px 30px;
 		font-size: x-small;
 	}
 }
@@ -57,14 +57,50 @@ main .menu ul li h2 a:hover{
 	}
 }
 
-@media (min-width: 201px) and (max-width: 400px){
+/* Resolução 201 x 300 */
+@media (min-width: 201px) and (max-width:300px){
+	main .menu {
+        height: 0px;
+    }
+
+	.menu ul {
+		padding: 0px;
+		font-size: small;
+	}
+}
+
+@media (min-width: 301px) and (max-width: 400px){
     main .menu {
         height: 70px;
     }
 }
 
+/* Resolução 302 x 361 */
+@media (min-width: 301px) and (max-width:362px){
+	main .menu {
+        height: 25px;
+    }
+
+	.menu ul {
+		padding: -1px 17px 14px 17px;
+		font-size: 13px;
+	}
+}
+
+/* Resolução 363 x 390 */
+@media (min-width: 363px) and (max-width:389px){
+	main .menu {
+        height: 25px;
+    }
+
+	.menu ul {
+		padding: -1px 17px 14px 17px;
+		font-size: 13px;
+	}
+}
+
 /* Samsung Galaxy S8 */
-@media (min-width: 360px) and (max-width: 740px) {
+/* @media (min-width: 360px) and (max-width: 740px) {
 	main .menu {
         height: 30px;
     }
@@ -73,11 +109,16 @@ main .menu ul li h2 a:hover{
 		padding: 14px 17px 14px 17px;
 		font-size: 15px;
 	}
-}
+} */
 
 /* Iphone 12 pro */
 @media (min-width: 390px) and (max-width: 844px){
 	main .menu {
-        height: 30px;
+        height: 25px;
     }
+
+	.menu ul {
+		padding: -1px 17px 14px 17px;
+		font-size: 13px;
+	}
 }

@@ -64,7 +64,7 @@ blockquote {
         margin: 0 auto;
     }
 
-    blockquote{
+    blockquote {
         margin-top: -165px;
         border-bottom: 5px solid rgb(34, 21, 34);
         border-top: 5px solid rgb(34, 21, 34);
@@ -74,117 +74,223 @@ blockquote {
 }
 
 /* Menor resolução */
-@media (max-width: 170px){
+@media (max-width: 170px) {
     .spy {
-        padding: 0 0 53px 0;
-        height: 222px;
-        width: 112px;
+        padding: 0;
+        height: 50px;
+        width: 50px;
         margin: 0 auto;
     }
 
     main .image {
-        height: 45%;
-        width: 85%;
-        margin: 0;
+        height: 100%;
+        width: 100%;
+        margin: 10px 0 0 0;
     }
 
     .image-skeleton {
-        height: 45%;
-        width: 85%;
-        margin: 0;
+        height: 100%;
+        width: 100%;
+        margin: 10px 0 0 0;
     }
 
-    blockquote{
-        width: 100%;
-        margin: -165px -14px 12px -11px;
+    blockquote {
+        width: 95%;
+        margin: 0px 0 -3px 0;
         border-bottom: 4px solid rgb(34, 21, 34);
         border-top: 4px solid rgb(34, 21, 34);
         border-right: 4px solid rgb(34, 21, 34);
         border-left: 4px solid rgb(34, 21, 34);
     }
 
-    h3{
-		font-size: 9px;
-	}
+    h3 {
+        font-size: 9px;
+    }
 
-    p{
+    p {
         font-size: 6px;
     }
 
-    .bloco{
+    .bloco {
         margin: 0px 31px 0px 6px;
     }
 }
 
 /* Resolução pequena */
-@media (min-width: 171px) and (max-width:200px){
+@media (min-width: 171px) and (max-width:200px) {
     .spy {
-        padding: 0 0 53px 0;
-        height: 222px;
-        width: 112px;
+        padding: 0;
+        height: 50px;
+        width: 50px;
         margin: 0 auto;
     }
 
     main .image {
-        height: 45%;
-        width: 85%;
-        margin: 0;
+        height: 105%;
+        width: 105%;
+        margin: 10px 0 0 0;
     }
 
     .image-skeleton {
-        height: 45%;
-        width: 85%;
-        margin: 0;
+        height: 105%;
+        width: 105%;
+        margin: 10px 0 0 0;
     }
 
-    blockquote{
-        width: 100%;
-        margin: -165px -14px 12px -11px;
+    blockquote {
+        width: 95%;
+        margin: 10px 0 -3px 0;
         border-bottom: 4px solid rgb(34, 21, 34);
         border-top: 4px solid rgb(34, 21, 34);
         border-right: 4px solid rgb(34, 21, 34);
         border-left: 4px solid rgb(34, 21, 34);
     }
 
-    h3{
-		font-size: 9px;
-	}
+    h3 {
+        font-size: 9px;
+    }
 
-    p{
+    p {
         font-size: 6px;
     }
 
-    .bloco{
+    .bloco {
         margin: 0px 31px 0px 6px;
     }
 }
 
-/* MotoGPower */
-@media (min-width: 412px) and (max-width: 823px) {
+/* Resolução 201 x 300 */
+@media (min-width: 201px) and (max-width:300px) {
+    .spy {
+        padding: 0;
+        height: 185px;
+        width: 107px;
+        margin: 0 auto;
+    }
+
     main .image {
         height: 60%;
-        width: 60%;
-        margin: 0px auto 0 55px;
+        width: 100%;
+        margin: 0;
     }
 
     .image-skeleton {
         height: 60%;
-        width: 60%;
-        margin: 0px auto 0px 0px;
+        width: 100%;
+        margin: 0;
     }
 
-    blockquote{
-        margin-top: -165px;
-        border-bottom: 5px solid rgb(34, 21, 34);
-        border-top: 5px solid rgb(34, 21, 34);
-        border-right: 5px solid rgb(34, 21, 34);
-        border-left: 5px solid rgb(34, 21, 34);
+    blockquote {
+        width: 100%;
+        margin: -70px -14px 12px -11px;
+        border-bottom: 4px solid rgb(34, 21, 34);
+        border-top: 4px solid rgb(34, 21, 34);
+        border-right: 4px solid rgb(34, 21, 34);
+        border-left: 4px solid rgb(34, 21, 34);
+    }
+
+    h3 {
+        font-size: 10px;
+    }
+
+    p {
+        font-size: 8px;
+    }
+
+    .bloco {
+        margin: 0px 31px 0px 6px;
+    }
+}
+
+/* Resolução 301 x 362 */
+@media (min-width: 301px) and (max-width:362px){
+    .spy {
+        padding: 0;
+        height: 185px;
+        width: 107px;
+        margin: 0 auto;
+    }
+
+    main .image {
+        height: 60%;
+        width: 100%;
+        margin: 0;
+    }
+
+    .image-skeleton {
+        height: 60%;
+        width: 100%;
+        margin: 0;
+    }
+
+    blockquote {
+        width: 105%;
+        margin: -70px -14px 12px -11px;
+        border-bottom: 4px solid rgb(34, 21, 34);
+        border-top: 4px solid rgb(34, 21, 34);
+        border-right: 4px solid rgb(34, 21, 34);
+        border-left: 4px solid rgb(34, 21, 34);
+    }
+
+    h3 {
+        font-size: 10px;
+    }
+
+    p {
+        font-size: 8px;
+    }
+
+    .bloco {
+        margin: 0px 31px 0px 6px;
+    }
+}
+
+/* Resolução 363 x 389 */
+@media (min-width: 363px) and (max-width:389px){
+    .spy {
+        padding: 0;
+        height: 185px;
+        width: 107px;
+        margin: 0 auto;
+    }
+
+    main .image {
+        height: 60%;
+        width: 100%;
+        margin: 0;
+    }
+
+    .image-skeleton {
+        height: 60%;
+        width: 100%;
+        margin: 0;
+    }
+
+    blockquote {
+        width: 105%;
+        margin: -70px -14px 12px -11px;
+        border-bottom: 4px solid rgb(34, 21, 34);
+        border-top: 4px solid rgb(34, 21, 34);
+        border-right: 4px solid rgb(34, 21, 34);
+        border-left: 4px solid rgb(34, 21, 34);
+    }
+
+    h3 {
+        font-size: 10px;
+    }
+
+    p {
+        font-size: 8px;
+    }
+
+    .bloco {
+        margin: 0px 31px 0px 6px;
     }
 }
 
 /* Samsung Galaxy S8 */
-@media (min-width: 360px) and (max-width: 740px) {
-    .div-style{
+/* @media (min-width: 363px) and (max-width: 740px) {
+    .div-style {
         padding: 35px 15px 0 15px;
     }
 
@@ -207,7 +313,7 @@ blockquote {
         margin: 0px auto;
     }
 
-    blockquote{
+    blockquote {
         margin: 0 -10px 10px;
         margin-top: -150px;
         border-bottom: 5px solid rgb(34, 21, 34);
@@ -216,18 +322,18 @@ blockquote {
         border-left: 5px solid rgb(34, 21, 34);
     }
 
-    h3{
-		font-size: 12px;
-	}
+    h3 {
+        font-size: 12px;
+    }
 
-    p{
+    p {
         font-size: 10px;
     }
 
-}
+} */
 
 /* Iphone 12 pro */
-@media (min-width: 390px) and (max-width: 844px){
+@media (min-width: 390px) and (max-width: 844px) {
     .spy {
         padding-bottom: 45px;
         height: 320px;
@@ -247,7 +353,7 @@ blockquote {
         margin: 0px auto 0px 0px;
     }
 
-    blockquote{
+    blockquote {
         margin: 0 -10px 10px;
         margin-top: -165px;
         border-bottom: 5px solid rgb(34, 21, 34);
@@ -256,7 +362,38 @@ blockquote {
         border-left: 5px solid rgb(34, 21, 34);
     }
 
+    h3 {
+        font-size: 12px;
+    }
+}
+
+/* MotoGPower */
+@media (min-width: 412px) and (max-width: 823px) {
     h3{
-		font-size: 12px;
-	}
+        font-size: 18px;
+    }
+
+    p{
+        font-size: 19px;
+    }
+
+    main .image {
+        height: 60%;
+        width: 60%;
+        margin: 0px auto 0 55px;
+    }
+
+    .image-skeleton {
+        height: 60%;
+        width: 60%;
+        margin: 0px auto 0px 0px;
+    }
+
+    blockquote {
+        margin-top: -165px;
+        border-bottom: 5px solid rgb(34, 21, 34);
+        border-top: 5px solid rgb(34, 21, 34);
+        border-right: 5px solid rgb(34, 21, 34);
+        border-left: 5px solid rgb(34, 21, 34);
+    }
 }

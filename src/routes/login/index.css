@@ -1,6 +1,6 @@
 .bodyPage {
     height: 65vh;
-    padding-top: 95px;
+    padding-top: 67px;
 }
 
 .fromStyle {
@@ -15,13 +15,13 @@
     border-radius: 35px;
 }
 
-.inputStyle{
+.inputStyle {
     padding: 10px;
     margin: 5px 30px 20px 30px;
     border-radius: 50px;
 }
 
-.inoputButtonStyle{
+.inoputButtonStyle {
     margin: -10px 205px;
     border-radius: 10px;
     background-color: #886fa5;
@@ -29,28 +29,130 @@
     cursor: pointer;
 }
 
-.inoputButtonStyle:hover{
+.inoputButtonStyle:hover {
     background-color: white;
     color: black;
 }
 
-.labelStyle{
+.labelStyle {
     margin-left: 40px;
     font-family: "Open Sans Condensed", "Arial", sans-serif;
 }
 
+/* Menor resolução */
+@media (max-width: 170px) {
+    .bodyPage {
+        padding-top: 173px;
+    }
+
+    .fromStyle {
+        width: 110px;
+        height: 335px;
+    }
+
+    .inoputButtonStyle {
+        margin: -10px 14px;
+    }
+
+    .labelStyle {
+        font-size: small;
+        margin-left: 0;
+    }
+
+    .inputStyle{
+        padding: 0px;
+        margin: 5px 0 20px 0px;
+    }
+}
+
+/* Resolução pequena */
+@media (min-width: 171px) and (max-width:200px){
+    .bodyPage {
+        padding-top: 153px;
+    }
+
+    .fromStyle {
+        width: 110px;
+        height: 335px;
+    }
+
+    .inoputButtonStyle {
+        margin: -10px 14px;
+    }
+
+    .labelStyle {
+        font-size: small;
+        margin-left: 0;
+    }
+
+    .inputStyle{
+        padding: 0px;
+        margin: 5px 0 20px 0px;
+    }
+}
+
+/* Resolução 201 x 300 */
+@media (min-width: 201px) and (max-width:300px){
+    .bodyPage {
+        padding-top: 202px;
+    }
+
+    .fromStyle {
+        width: 245px;
+        height: 335px;
+    }
+
+    .inoputButtonStyle {
+        margin: -5px 14px;
+    }
+
+    .labelStyle {
+        font-size: small;
+        margin-left: 0;
+    }
+
+    .inputStyle{
+        padding: 0px;
+        margin: 5px 0 20px 0px;
+    }
+}
+
 /* Samsung Galaxy S8 */
 @media (min-width: 360px) and (max-width: 740px) {
-    .bodyPage{
+    .bodyPage {
         padding-top: 85px;
     }
 
-    .fromStyle{
+    .fromStyle {
         width: 260px;
         height: 295px;
     }
 
-    .inoputButtonStyle{
+    .inoputButtonStyle {
         margin: -10px 85px;
+    }
+}
+
+/* Iphone 12 pro */
+@media (min-width: 390px) and (max-width: 844px) {
+    .bodyPage {
+        padding-top: 182px;
+        height: 58vh;
+    }
+
+    .fromStyle {
+        width: 260px;
+        height: 295px;
+    }
+
+    .inoputButtonStyle {
+        margin: -10px 85px;
+    }
+}
+
+/* MotoGPower */
+@media (min-width: 412px) and (max-width: 823px){
+    .bodyPage {
+        padding-top: 176px;
     }
 }

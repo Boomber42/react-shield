@@ -117,7 +117,7 @@ p {
 	}
 
 	main .counteiner{
-		padding: 55px 0 0 0;
+		padding: -10px 0 0 0;
 	}
 }
 
@@ -128,7 +128,14 @@ p {
 	}
 
 	main .counteiner{
-		padding: 40px 0 0 0;
+		padding: -1px 0 0 0;
+	}
+}
+
+/* Resolução 201 x 300 */
+@media (min-width: 201px) and (max-width:300px){
+	main .counteiner{
+		padding: 40px 0;
 	}
 }
 

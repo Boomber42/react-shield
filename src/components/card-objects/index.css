@@ -31,6 +31,11 @@
     .image-conteiner .imageCard {
         width: 100%;
         height: 90%;
+        margin: 0 0 0 8px;
+    }
+
+    .title{
+        margin: 0 0 0 8px;
     }
 
     .card-conteiner {
@@ -47,6 +52,53 @@
     .image-conteiner .imageCard {
         width: 100%;
         height: 90%;
+        margin: 0 0 0 10px;
+    }
+
+    .title{
+        margin: 0 0 0 10px;
+    }
+
+    .card-conteiner {
+        margin: 0 0 0 -5px;
+    }
+
+    .card {
+        height: 130px;
+    }
+}
+
+/* Resolução 201 x 300 */
+@media (min-width: 201px) and (max-width:300px){
+    .image-conteiner .imageCard {
+        width: 100%;
+        height: 90%;
+        margin: 0 0 0 10px;
+    }
+
+    .title{
+        margin: 0 0 0 10px;
+    }
+
+    .card-conteiner {
+        margin: 0 0 0 -5px;
+    }
+
+    .card {
+        height: 130px;
+    }
+}
+
+/* Resolução 301 x 362 */
+@media (min-width: 301px) and (max-width:362px){
+    .image-conteiner .imageCard {
+        width: 90%;
+        height: 115%;
+        margin: 0px 0 0 20px;
+    }
+
+    .title{
+        margin: 20px 0 0 20px;;
     }
 
     .card-conteiner {

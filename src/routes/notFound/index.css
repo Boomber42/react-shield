@@ -1,24 +1,77 @@
-.bodyStyle{
+.bodyStyle {
     height: 50vh;
+    padding: 204px 0 0 0;
 }
 
-.errorStyle{
+.errorStyle {
     display: grid;
-    margin-top: 500px;
+    margin-top: 105px;
     justify-content: center;
     font-family: "math";
     font-size: revert;
 }
 
+/* Menor resolução */
+@media (max-width: 170px) {
+    .bodyStyle {
+        padding: 377px 0 0 9px;
+        height: 50vh;
+    }
+
+    .errorStyle {
+        margin: 0 auto;
+        font-size: x-small;
+    }
+}
+
+/* Resolução pequena */
+@media (min-width: 171px) and (max-width:200px){
+    .bodyStyle {
+        padding: 290px 0 0 9px;
+    }
+
+    .errorStyle {
+        margin: 0 auto;
+        font-size: x-small;
+    }
+}
+
+/* Resolução 201 x 300 */
+@media (min-width: 201px) and (max-width:300px){
+    .bodyStyle {
+        padding: 340px 0 0 9px;
+    }
+
+    .errorStyle {
+        margin: 0 auto;
+        font-size: 14px;
+    }
+}
+
 /* Samsung Galaxy S8 */
 @media (min-width: 360px) and (max-width: 740px) {
-    .bodyStyle{
+    .bodyStyle {
         padding: 178px 0 0 0px;
         height: 50vh;
     }
 
-    .errorStyle{
+    .errorStyle {
         margin: 0 auto;
         font-size: medium;
+    }
+}
+
+/* Iphone 12 pro */
+@media (min-width: 390px) and (max-width: 844px) {
+    .bodyStyle {
+        padding: 286px 0 0 0px;
+        height: 46vh;
+    }
+}
+
+/* MotoGPower */
+@media (min-width: 412px) and (max-width: 823px){
+    .bodyStyle {
+        padding: 274px 0 0 0px;
     }
 }

@@ -38,13 +38,14 @@
 }
 
 /* Menor resolução */
-@media (max-width: 170px){
+@media (max-width: 170px) {
 	.rodape h4 {
 		font-size: x-small;
 	}
 
 	.rodape {
-		margin: 0 0 0 3px;;
+		margin: 0 0 0 3px;
+		;
 		height: 35px;
 	}
 
@@ -56,13 +57,14 @@
 }
 
 /* Resolução pequena */
-@media (min-width: 171px) and (max-width:200px){
+@media (min-width: 171px) and (max-width:200px) {
 	.rodape h4 {
 		font-size: x-small;
 	}
 
 	.rodape {
-		margin: 0 0 0 3px;;
+		margin: 0 0 0 3px;
+		;
 		height: 35px;
 	}
 
@@ -77,5 +79,23 @@
 @media (min-width: 171) and (max-width: 844px) {
 	.rodape {
 		margin: 0 0 0 10px;
+	}
+}
+
+/* Resolução 201 x 300 */
+@media (min-width: 201px) and (max-width:300px) {
+	.rodape h4 {
+		font-size: small;
+	}
+
+	.rodape {
+		margin: 0 auto;
+		height: 35px;
+	}
+
+	.rodape .icones img {
+		width: 20px;
+		height: 20px;
+		margin: 7px 0 0 0;
 	}
 }

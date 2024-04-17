@@ -5,6 +5,13 @@
 /* Menor resolução */
 @media (max-width: 170px){
     .div-style{
-        padding: 80px 0px 0px 15px;
+        padding: 40px 0px 0px 0px;
+    }
+}
+
+/* Resolução pequena */
+@media (min-width: 171px) and (max-width:200px) {
+    .div-style{
+        padding: 5px 3px 0px 3px;
     }
 }

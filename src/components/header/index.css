@@ -61,8 +61,87 @@ main .topo h1 {
 	}
 }
 
+/* Resolução 201 x 300 */
+@media (min-width: 201px) and (max-width:300px) {
+	main .topo {
+		height: 70px;
+		border-bottom: 4px solid rgb(0, 0, 0);
+	}
 
-@media (min-width: 201px) and (max-width: 600px) {
+	main .topo h1 {
+		font-size: large;
+		margin: 20px 0 0 0;
+		padding: 0 0 0 50px;
+	}
+
+	main .topo img {
+		height: 50px;
+		width: 50px;
+		margin: 5px 5px 0px 5px;
+	}
+}
+
+/* Resolução 301 x 362 */
+@media (min-width: 301px) and (max-width:365px){
+	main .topo {
+		height: 70px;
+		border-bottom: 4px solid rgb(0, 0, 0);
+	}
+
+	main .topo h1 {
+		font-size: xx-large;
+		margin: 6px 0 0 0;
+		padding: 0 0 0 50px;
+	}
+
+	main .topo img {
+		height: 50px;
+		width: 50px;
+		margin: 5px 5px 0px 5px;
+	}
+}
+
+/* Iphone 12 pro */
+@media (min-width: 390px) and (max-width: 844px){
+	main .topo {
+		height: 70px;
+		border-bottom: 4px solid rgb(0, 0, 0);
+	}
+
+	main .topo h1 {
+		font-size: xx-large;
+		margin: 6px 0 0 0;
+		padding: 0 0 0 50px;
+	}
+
+	main .topo img {
+		height: 50px;
+		width: 50px;
+		margin: 5px 5px 0px 5px;
+	}
+}
+
+/* Resolução 363 x 389 */
+@media (min-width: 363px) and (max-width:389px){
+	main .topo {
+		height: 70px;
+		border-bottom: 4px solid rgb(0, 0, 0);
+	}
+
+	main .topo h1 {
+		font-size: xx-large;
+		margin: 6px 0 0 0;
+		padding: 0 0 0 50px;
+	}
+
+	main .topo img {
+		height: 50px;
+		width: 50px;
+		margin: 5px 5px 0px 5px;
+	}
+}
+
+/* @media (min-width: 364px) and (max-width: 600px) {
 	main .topo {
 		height: 70px;
 	}
@@ -77,10 +156,10 @@ main .topo h1 {
 		width: 70px;
 		margin-top: -4px;
 	}
-}
+} */
 
 /* Samsung Galaxy S8 */
-@media (min-width: 360px) and (max-width: 740px) {
+/* @media (min-width: 365px) and (max-width: 740px) {
 	main .topo {
 		height: 70px;
 	}
@@ -95,4 +174,4 @@ main .topo h1 {
 		width: 55px;
 		margin-top: 3px;
 	}
-}
+} */
