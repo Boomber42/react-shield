@@ -1,6 +1,6 @@
 .bodyStyle {
-    height: 50vh;
-    padding: 184px 0 0 0;
+    height: 52vh;
+    padding: 186px 0 0 0;
 }
 
 .errorStyle {
@@ -14,8 +14,8 @@
 /* Menor resolução */
 @media (max-width: 170px) {
     .bodyStyle {
-        padding: 377px 0 0 9px;
-        height: 50vh;
+        padding: 384px 0 0 9px;
+        height: 42vh;
     }
 
     .errorStyle {
@@ -27,7 +27,7 @@
 /* Resolução pequena */
 @media (min-width: 171px) and (max-width:200px){
     .bodyStyle {
-        padding: 290px 0 0 9px;
+        padding: 272px 0 0 9px;
     }
 
     .errorStyle {
@@ -39,7 +39,8 @@
 /* Resolução 201 x 300 */
 @media (min-width: 201px) and (max-width:300px){
     .bodyStyle {
-        padding: 340px 0 0 9px;
+        padding: 275px 0 0 9px;
+        height: 57vh;
     }
 
     .errorStyle {
@@ -51,7 +52,7 @@
 /* Resolução 301 x 362 */
 @media (min-width: 301px) and (max-width:389px){
     .bodyStyle {
-        padding: 280px 0 0 0px;
+        padding: 300px 0 0 0px;
         height: 50vh;
     }
 
@@ -76,16 +77,27 @@
 } */
 
 /* Iphone 12 pro */
-@media (min-width: 390px) and (max-width: 844px) {
+@media (min-width: 390px) and (max-width: 411px) {
     .bodyStyle {
-        padding: 286px 0 0 0px;
-        height: 46vh;
+        padding: 300px 0 0 0px;
+        height: 50vh;
+    }
+
+    .errorStyle {
+        margin: 0 auto;
+        font-size: inherit;
     }
 }
 
 /* MotoGPower */
-@media (min-width: 412px) and (max-width: 823px){
+@media (min-width: 412px) and (max-width: 844px){
     .bodyStyle {
-        padding: 274px 0 0 0px;
+        padding: 300px 0 0 0px;
+        height: 50vh;
+    }
+
+    .errorStyle {
+        margin: 0 auto;
+        font-size: inherit;
     }
 }
