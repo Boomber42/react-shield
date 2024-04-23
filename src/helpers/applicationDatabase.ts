@@ -71,6 +71,10 @@ export class ApplicationDatabase {
             const snapshot: DataSnapshot = await get(databaseReference);
     
             const response: any = snapshot.val();
+
+            if(!response){
+                return {} as Subject;
+            }
     
             return {
                 ...response,

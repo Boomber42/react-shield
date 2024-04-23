@@ -1,7 +1,7 @@
 .rodape {
 	background-color: rgb(41, 39, 39);
 	color: #f2fffc;
-	height: 50px;
+	height: var(--footer-height);
 	clear: both;
 	width: var(--default-width);
 	margin: 0 auto;

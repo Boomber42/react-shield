@@ -53,55 +53,57 @@ function HomeRouter() {
 	}
 
 	return (
-		<div className='counteiner'>
+		<>
 			{error ? (
 				<NotFound />
 			) : (
-				<div className='div-style'>
-					{userIsLoggedIn ? (
-						<div className='buttonStyle'>
-							<Button name='Adicionar novo' onClick={openModal} />
-							<Logout />
-						</div>
-					) : null}
-					<CustomModal isModalOpen={isModalOpen} closeModal={closeModal} typeModal={currentType} />
-					{itens?.map((item: Subject, index: number) => {
-						var card;
-						if (item.type === 'Agente' || item.type === 'Vingador') {
-							card = <CardSubjects
-								id={item.id}
-								title={item.title}
-								imageAlt={item.alt}
-								codeName={item.codeName || ''}
-								image={item.image}
-								name={item.name || ''}
-								status={item.status || ''}
-								key={index}
-							/>
-						}
+				<div className='counteiner'>
+					<div className='div-style'>
+						{userIsLoggedIn ? (
+							<div className='buttonStyle'>
+								<Button name='Adicionar novo' onClick={openModal} />
+								<Logout />
+							</div>
+						) : null}
+						<CustomModal isModalOpen={isModalOpen} closeModal={closeModal} typeModal={currentType} />
+						{itens?.map((item: Subject, index: number) => {
+							var card;
+							if (item.type === 'Agente' || item.type === 'Vingador') {
+								card = <CardSubjects
+									id={item.id}
+									title={item.title}
+									imageAlt={item.alt}
+									codeName={item.codeName || ''}
+									image={item.image}
+									name={item.name || ''}
+									status={item.status || ''}
+									key={index}
+								/>
+							}
 
-						if (item.type === 'Objeto' || item.type === 'Veiculo') {
-							card = <CardObjects
-								title={item.title}
-								imageAlt={item.alt}
-								image={item.image}
-								key={index}
-							/>
-						}
+							if (item.type === 'Objeto' || item.type === 'Veiculo') {
+								card = <CardObjects
+									title={item.title}
+									imageAlt={item.alt}
+									image={item.image}
+									key={index}
+								/>
+							}
 
-						return (
-							card
-						)
-					})}
-					{loading ? (
-						<div className='loader'>
-							<Loading />
-						</div>
-					) : ''}
+							return (
+								card
+							)
+						})}
+						{loading ? (
+							<div className='loader'>
+								<Loading />
+							</div>
+						) : ''}
 
+					</div>
 				</div>
 			)}
-		</div>
+		</>
 	);
 }
 

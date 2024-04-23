@@ -7,6 +7,7 @@ import Button from '../../components/button/button';
 import Skeleton from '../../components/skeleton';
 import Modal from '../../components/modal/modal';
 import Logout from '../../components/logout/logout';
+import ContentNotFound from '../contentNotFound/contentNotFoundRouter';
 
 function RenderText({ info, type, value, skeletonWidth }: { info: string, type: string | undefined, value: string | undefined, skeletonWidth: string }) {
 	return (
@@ -67,60 +68,66 @@ export default function SubjectsRouter() {
 	}
 
 	return (
-		<div className='counteiner'>
-			{userIsLoggedIn ? (
-				<div className='buttonStyle'>
-					<Logout/>
-				</div>
-			) : null}
-			
-			<div className='diveStyle'>
-				<div className='infoSpy'>
-					<img className="image-info" src={subject?.image} alt={subject?.image} onLoad={handleImageLoad} style={{
-						display: isLoading ? 'none' : 'block'
-					}} />
-
-					{isLoading ? (
-						<div className="image-skeleton" >
-							<Skeleton className="image-info" style={{
-								height: '320px',
-							}} />
+		<>
+			{!loading && !subject?.id ? (
+				<ContentNotFound />
+			) : (
+				<div className='counteiner'>
+					{userIsLoggedIn ? (
+						<div className='buttonStyle'>
+							<Logout />
 						</div>
 					) : null}
-				</div>
 
-				<div className='infoSubject'>
-					<RenderText info='Titulo do' type={subject?.type} value={subject?.title} skeletonWidth='200px' />
-					<RenderText info='Codinome do' type={subject?.type} value={subject?.codeName} skeletonWidth='400px' />
-					<RenderText info='Nome completo do' type={subject?.type} value={subject?.name} skeletonWidth='250px' />
-					<RenderText info='Status operacional do' type={subject?.type} value={subject?.status} skeletonWidth='100px' />
-				</div>
+					<div className='diveStyle'>
+						<div className='infoSpy'>
+							<img className="image-info" src={subject?.image} alt={subject?.image} onLoad={handleImageLoad} style={{
+								display: isLoading ? 'none' : 'block'
+							}} />
 
-				<div className='infoSubjectText' style={{ margin: '50px 0px 50px 0px' }}>
-					{userIsLoggedIn && (<div className='buttonDescripition' >
-						<Button name='Descrição' onClick={openDescriptionModel} loading={loading} />
-					</div>)}
+							{isLoading ? (
+								<div className="image-skeleton" >
+									<Skeleton className="image-info" style={{
+										height: '320px',
+									}} />
+								</div>
+							) : null}
+						</div>
 
-					<p className='descripition'>{subject?.descripition}</p>
-				</div>
+						<div className='infoSubject'>
+							<RenderText info='Titulo do' type={subject?.type} value={subject?.title} skeletonWidth='200px' />
+							<RenderText info='Codinome do' type={subject?.type} value={subject?.codeName} skeletonWidth='400px' />
+							<RenderText info='Nome completo do' type={subject?.type} value={subject?.name} skeletonWidth='250px' />
+							<RenderText info='Status operacional do' type={subject?.type} value={subject?.status} skeletonWidth='100px' />
+						</div>
 
-				<Modal isModalOpen={isModalOpen} height='550px' width='800px'>
-					<h3> Adicionar descrição </h3>
-					<textarea className='textAreaModal' value={descripition} onChange={HandleDescriptionChange}>
-					</textarea>
-					<div className='buttonDescripition' >
-						<Button name='Salvar' onClick={() => submitDescripition()} />
-						<Button name='Fechar' onClick={() => setModelOpen(false)} />
-					</div>
-				</Modal>
+						<div className='infoSubjectText' style={{ margin: '50px 0px 50px 0px' }}>
+							{userIsLoggedIn && (<div className='buttonDescripition' >
+								<Button name='Descrição' onClick={openDescriptionModel} loading={loading} />
+							</div>)}
 
-				{/* {loading ? (
+							<p className='descripition'>{subject?.descripition}</p>
+						</div>
+
+						<Modal isModalOpen={isModalOpen} height='550px' width='800px'>
+							<h3> Adicionar descrição </h3>
+							<textarea className='textAreaModal' value={descripition} onChange={HandleDescriptionChange}>
+							</textarea>
+							<div className='buttonDescripition' >
+								<Button name='Salvar' onClick={() => submitDescripition()} />
+								<Button name='Fechar' onClick={() => setModelOpen(false)} />
+							</div>
+						</Modal>
+
+						{/* {loading ? (
 					<div className='loader'>
 						<Loading />
 					</div>
 				) : ''} */}
 
-			</div>
-		</div>
+					</div>
+				</div>
+			)}
+		</>
 	)
 }
