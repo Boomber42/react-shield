@@ -53,7 +53,7 @@ export default class Api {
 
             return await this.applicationDatabase.postSubject(uploadSubject, subjectId);
         } catch (error) {
-            return {} as Subject;
+            throw error;
         }
     }
 

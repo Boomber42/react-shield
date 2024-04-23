@@ -60,7 +60,7 @@ export class ApplicationDatabase {
             } as Subject;
         } catch (err) {
             console.error('err', err);
-            return { } as Subject;
+            throw err;
         }
     }
 

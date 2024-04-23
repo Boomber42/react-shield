@@ -5,6 +5,8 @@ import Button from '../button/button';
 import Api, { Subject } from '../../helpers/api';
 import Loading from '../loading/loading';
 import ImageCropper from '../imageCropper';
+import { toast, Bounce } from "react-toastify";
+import Toast from "../toast/toast";
 
 const customStyles = {
   content: {
@@ -41,22 +43,50 @@ export default function CustomModal(props: CustomModalProps) {
   }
 
   async function submitForm() {
-    setLoading(true);
+    try{
+      setLoading(true);
 
-    var form: any = {
-      title,
-      name,
-      codeName,
-      status,
-      image,
-      alt: `Imagem do ${name}`,
-      type: props.typeModal
-    };
-
-    const api = new Api();
-    await api.postSubject(form as Subject);
-    setLoading(false);
-    props.closeModal(true);
+      var form: any = {
+        title,
+        name,
+        codeName,
+        status,
+        image,
+        alt: `Imagem do ${name}`,
+        type: props.typeModal
+      };
+  
+      const api = new Api();
+      await api.postSubject(form as Subject);
+      setLoading(false);
+      toast.success('Cadastrado com sucesso!', {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
+      props.closeModal(true);
+    }
+    catch(error){
+      setLoading(false);
+      toast.error('Erro no cadasto!', {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
+      props.closeModal(true);
+    }
   }
 
   const onSelectFile = (e: ChangeEvent<HTMLInputElement>) => {
@@ -84,6 +114,7 @@ export default function CustomModal(props: CustomModalProps) {
 
   return (
     <div>
+      <Toast/>
       <Modal
         ariaHideApp={false}
         isOpen={props.isModalOpen}
