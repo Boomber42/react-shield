@@ -10,3 +10,8 @@
 	border-radius: 50px;
 	background-color: rgb(250, 240, 249);
 }
+
+.error-style{
+	color: red;
+    font-size: medium;
+}

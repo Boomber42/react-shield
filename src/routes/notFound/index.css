@@ -13,23 +13,19 @@
 
 /* Menor resolução */
 @media (max-width: 170px) {
-    .bodyStyle {
-        padding: 384px 0 0 9px;
-        height: 42vh;
+    .bodyStyle{
+        height:calc(111vh - var(--header-height) - var(--menu-height) - var(--footer-height) - 5px);
     }
-
     .errorStyle {
-        margin: 0 auto;
         font-size: x-small;
     }
 }
 
 /* Resolução pequena */
 @media (min-width: 171px) and (max-width:200px){
-    .bodyStyle {
-        padding: 272px 0 0 9px;
+    .bodyStyle{
+        height:calc(109vh - var(--header-height) - var(--menu-height) - var(--footer-height) - 3px);
     }
-
     .errorStyle {
         margin: 0 auto;
         font-size: x-small;
@@ -38,11 +34,9 @@
 
 /* Resolução 201 x 300 */
 @media (min-width: 201px) and (max-width:300px){
-    .bodyStyle {
-        padding: 275px 0 0 9px;
-        height: 57vh;
+    .bodyStyle{
+        height:calc(114vh - var(--header-height) - var(--menu-height) - var(--footer-height) - 7px);
     }
-
     .errorStyle {
         margin: 0 auto;
         font-size: 14px;
@@ -51,38 +45,20 @@
 
 /* Resolução 301 x 362 */
 @media (min-width: 301px) and (max-width:389px){
-    .bodyStyle {
-        padding: 300px 0 0 0px;
-        height: 50vh;
+    .bodyStyle{
+        height:calc(109vh - var(--header-height) - var(--menu-height) - var(--footer-height) - -3px);
     }
-
     .errorStyle {
         margin: 0 auto;
         font-size: medium;
     }
 }
 
-
-/* Samsung Galaxy S8 */
-/* @media (min-width: 360px) and (max-width: 740px) {
-    .bodyStyle {
-        padding: 178px 0 0 0px;
-        height: 50vh;
-    }
-
-    .errorStyle {
-        margin: 0 auto;
-        font-size: medium;
-    }
-} */
-
 /* Iphone 12 pro */
 @media (min-width: 390px) and (max-width: 411px) {
-    .bodyStyle {
-        padding: 300px 0 0 0px;
-        height: 50vh;
+    .bodyStyle{
+        height:calc(109vh - var(--header-height) - var(--menu-height) - var(--footer-height) - -3px);
     }
-
     .errorStyle {
         margin: 0 auto;
         font-size: inherit;
@@ -91,11 +67,9 @@
 
 /* MotoGPower */
 @media (min-width: 412px) and (max-width: 844px){
-    .bodyStyle {
-        padding: 300px 0 0 0px;
-        height: 50vh;
+    .bodyStyle{
+        height:calc(109vh - var(--header-height) - var(--menu-height) - var(--footer-height) - -3px);
     }
-
     .errorStyle {
         margin: 0 auto;
         font-size: inherit;

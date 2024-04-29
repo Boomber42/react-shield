@@ -29,8 +29,8 @@ main .topo h1 {
 
 	main .topo h1 {
 		font-size: small;
-		margin: 22px 0 0 0;
-		padding: 0 0 0 45px;
+		margin: 10px 0 0 0;
+		padding: 0 0 0 10px;
 	}
 
 	main .topo img {
@@ -49,8 +49,8 @@ main .topo h1 {
 
 	main .topo h1 {
 		font-size: large;
-		margin: 20px 0 0 0;
-		padding: 0 0 0 50px;
+		margin: 15px 0 0 0;
+        padding: 0 0 0 5px;
 	}
 
 	main .topo img {
@@ -69,8 +69,8 @@ main .topo h1 {
 
 	main .topo h1 {
 		font-size: large;
-		margin: 20px 0 0 0;
-		padding: 0 0 0 50px;
+		margin: 10px 0 0 0;
+        padding: 0;
 	}
 
 	main .topo img {
@@ -90,7 +90,7 @@ main .topo h1 {
 	main .topo h1 {
 		font-size: xx-large;
 		margin: 6px 0 0 0;
-		padding: 0 0 0 50px;
+		padding: 0;
 	}
 
 	main .topo img {
@@ -110,7 +110,6 @@ main .topo h1 {
 	main .topo h1 {
 		font-size: xx-large;
 		margin: 6px 0 0 0;
-		padding: 0 0 0 50px;
 	}
 
 	main .topo img {
@@ -130,7 +129,6 @@ main .topo h1 {
 	main .topo h1 {
 		font-size: xx-large;
 		margin: 6px 0 0 0;
-		padding: 0 0 0 50px;
 	}
 
 	main .topo img {
