@@ -43,7 +43,7 @@
 /* Menor resolução */
 @media (max-width: 170px) {
     .bodyPage {
-        padding-top: 173px;
+        height: calc(111vh - var(--header-height) - var(--menu-height) - var(--footer-height) - 5px);
     }
 
     .fromStyle {
@@ -60,20 +60,20 @@
         margin-left: 0;
     }
 
-    .inputStyle{
+    .inputStyle {
         padding: 0px;
         margin: 5px 0 20px 0px;
     }
 }
 
 /* Resolução pequena */
-@media (min-width: 171px) and (max-width:200px){
+@media (min-width: 171px) and (max-width:200px) {
     .bodyPage {
-        padding-top: 153px;
+        height: calc(109vh - var(--header-height) - var(--menu-height) - var(--footer-height) - 7px);
     }
 
     .fromStyle {
-        width: 110px;
+        width: 155px;
         height: 335px;
     }
 
@@ -86,20 +86,20 @@
         margin-left: 0;
     }
 
-    .inputStyle{
+    .inputStyle {
         padding: 0px;
         margin: 5px 0 20px 0px;
     }
 }
 
 /* Resolução 201 x 300 */
-@media (min-width: 201px) and (max-width:300px){
+@media (min-width: 201px) and (max-width:300px) {
     .bodyPage {
-        padding-top: 202px;
+        height: calc(114vh - var(--header-height) - var(--menu-height) - var(--footer-height) - 3px);
     }
 
     .fromStyle {
-        width: 245px;
+        width: 180px;
         height: 335px;
     }
 
@@ -112,38 +112,47 @@
         margin-left: 0;
     }
 
-    .inputStyle{
+    .inputStyle {
         padding: 0px;
         margin: 5px 0 20px 0px;
     }
 }
 
-/* Samsung Galaxy S8 */
-@media (min-width: 360px) and (max-width: 740px) {
+/* Resolução 301 x 362 */
+@media (min-width: 301px) and (max-width:389px) {
     .bodyPage {
-        padding-top: 85px;
+        height: calc(109vh - var(--header-height) - var(--menu-height) - var(--footer-height) - -3px);
     }
 
     .fromStyle {
         width: 260px;
-        height: 295px;
+        height: 335px;
     }
 
     .inoputButtonStyle {
-        margin: -10px 85px;
+        margin: -5px 14px;
+    }
+
+    .labelStyle {
+        font-size: small;
+        margin-left: 0;
+    }
+
+    .inputStyle {
+        padding: 0px;
+        margin: 5px 0 20px 0px;
     }
 }
 
 /* Iphone 12 pro */
 @media (min-width: 390px) and (max-width: 844px) {
     .bodyPage {
-        padding-top: 182px;
-        height: 58vh;
+        height: calc(109vh - var(--header-height) - var(--menu-height) - var(--footer-height) - -3px);
     }
 
     .fromStyle {
-        width: 260px;
-        height: 295px;
+        width: 340px;
+        height: 300px;
     }
 
     .inoputButtonStyle {
@@ -152,8 +161,14 @@
 }
 
 /* MotoGPower */
-@media (min-width: 412px) and (max-width: 823px){
+@media (min-width: 412px) and (max-width: 850px) {
     .bodyPage {
-        padding-top: 176px;
+        height: calc(109vh - var(--header-height) - var(--menu-height) - var(--footer-height) - -3px);
     }
+
+    .fromStyle {
+        width: 430px;
+        height: 380px;
+    }
+
 }
