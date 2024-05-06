@@ -34,17 +34,18 @@ export default function CustomModal(props: CustomModalProps) {
   let [image, setImage] = useState<string>('');
   let [loading, setLoading] = useState(false);
   let [cropOpen, setCropOpen] = useState(false);
+  let [clicked, setClicked] = useState<boolean>(false);
 
   const createSubjectFormSchema = z.object({
-    title: z.string().min(1, { message: '*Este campo é obrigatório*' }).default(''),
+    title: z.string().min(1, { message: 'Este campo é obrigatório' }).default(''),
     name: z.lazy(() => {
-      return ['Agente', 'Vingador'].includes(props.typeModal) ? z.string().min(1, { message: '*Este campo é obrigatório*' }).default('') : z.undefined();
+      return ['Agente', 'Vingador'].includes(props.typeModal) ? z.string().min(1, { message: 'Este campo é obrigatório' }).default('') : z.undefined();
     }),
     codeName: z.lazy(() => {
-      return ['Agente', 'Vingador'].includes(props.typeModal) ? z.string().min(1, { message: '*Este campo é obrigatório*' }).default('') : z.undefined();
+      return ['Agente', 'Vingador'].includes(props.typeModal) ? z.string().min(1, { message: 'Este campo é obrigatório' }).default('') : z.undefined();
     }),
     status: z.lazy(() => {
-      return ['Agente', 'Vingador'].includes(props.typeModal) ? z.string().min(1, { message: '*Este campo é obrigatório*' }).default('') : z.undefined();
+      return ['Agente', 'Vingador'].includes(props.typeModal) ? z.string().min(1, { message: 'Este campo é obrigatório' }).default('') : z.undefined();
     })
   });
 
@@ -60,6 +61,7 @@ export default function CustomModal(props: CustomModalProps) {
   }
 
   async function submitForm(data: any) {
+    setClicked(true);
     const response = createSubjectFormSchema.safeParse(data);
 
     if (!response.success || !image) {
@@ -95,7 +97,7 @@ export default function CustomModal(props: CustomModalProps) {
         theme: "light",
         transition: Bounce,
       });
-      props.closeModal(true);
+      closeModal(true);
     } catch(error) {
       setLoading(false);
       toast.error('Erro no cadasto!', {
@@ -109,9 +111,13 @@ export default function CustomModal(props: CustomModalProps) {
         theme: "light",
         transition: Bounce,
       });
-      props.closeModal(true);
+      closeModal(true);
     }
   }
+
+  const onError = () => {
+    setClicked(true);
+  };
 
   const onSelectFile = (e: ChangeEvent<HTMLInputElement>) => {
     var target = e.target as any;
@@ -136,10 +142,11 @@ export default function CustomModal(props: CustomModalProps) {
     setCropOpen(false);
   }
 
-  const closeModal = (): void => {
+  const closeModal = (submited?: boolean): void => {
     reset();
     setImage('');
-    props.closeModal();
+    setClicked(false);
+    props.closeModal(submited);
   }
 
   return (
@@ -149,7 +156,7 @@ export default function CustomModal(props: CustomModalProps) {
         ariaHideApp={false}
         isOpen={props.isModalOpen}
         onAfterOpen={afterOpenModal}
-        onRequestClose={() => props.closeModal()}
+        onRequestClose={() => closeModal()}
         style={customStyles}
         contentLabel="Adicionar informações"
         shouldCloseOnOverlayClick={false}
@@ -188,7 +195,7 @@ export default function CustomModal(props: CustomModalProps) {
                 {['Veiculo', 'Objeto'].includes(props.typeModal) ? (<>
                   <label> Adicione a imagem </label>
                   <input type='file' name='imagem' accept='image/*' onChange={onSelectFile} />
-                  {!isValid || !image ? <span className="error-style" >Este campo é obrigatório</span> : null}
+                  {(!isValid || !image) && clicked ? <span className="error-style" >Este campo é obrigatório</span> : null}
                 </>) : null}
               </div>
             </>
@@ -199,12 +206,12 @@ export default function CustomModal(props: CustomModalProps) {
             flexDirection: 'column',
           }}>
             <ImageCropper setCropStatus={setCropStatus} closeImageModal={closeImageModal} />
-            {!isValid || !image ? <span className="error-style" >Este campo é obrigatório</span> : null}
+            {(!isValid || !image) && clicked ? <span className="error-style"> Este campo é obrigatório </span> : null}
           </div>) : null}
 
           {!cropOpen && (
             <div className='buttonStyle'>
-              <Button name='Salvar' onClick={handleSubmit(submitForm)} loading={loading} />
+              <Button name='Salvar' onClick={handleSubmit(submitForm, onError)} loading={loading} />
               <Button name='Fechar' onClick={closeModal} loading={loading} />
             </div>
           )}
